@@ -802,7 +802,7 @@ function date_select_input($params) {
       '#weight' => $formats['input']['select']['Y'],
     );
     if ($select_year) {
-      $year = $year > 0 ? $year : date_gmdate('Y', $now);
+      $year = $year > 0 ? $year : date_gmdate('Y', date_gmadj_zone(time()));
       $years_array = drupal_map_assoc(range($year - $years_back, $year + $years_forward));
       // array_unshift converts the assoc array to a numeric one, can't use it here
       if (!$required || in_array('year', $opt_fields) || $blank_default) $years_array = array(0 => '') + $years_array;
