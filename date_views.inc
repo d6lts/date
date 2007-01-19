@@ -707,7 +707,7 @@ function date_views_browser_period_start_stamp($arg = NULL, $period = 'month') {
     $start = intval($stamp - intval($dow * 86400) + $adj);
     // if site preference is to start week on other than a Sunday, go back a week and move up to correct day
     if (variable_get('date_first_day', 0)) {
-      $start += (-604800) + (variable_get('date_first_day', 0) * 86400);
+      $start += intval(variable_get('date_first_day', 0) * 86400);
     }
     break;
   case ('year'):
