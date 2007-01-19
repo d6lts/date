@@ -94,7 +94,7 @@ function date_field_settings($op, $field) {
         include_once(drupal_get_path('module', 'event') .'/event_timezones.inc');
       }
       $form = array();
-      $tz_handling = $field['tz_handling'] ? $field['tz_handling'] : 'gmt';
+      $tz_handling = $field['tz_handling'] ? $field['tz_handling'] : 'site';
       $form['input'] = array(
         '#type' => 'fieldset',
         '#title' => t('Input options'),
