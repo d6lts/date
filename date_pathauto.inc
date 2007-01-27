@@ -109,9 +109,9 @@ function date_pathauto_node($op, $node = NULL) {
 
       return $results;
 	  break;
-	
+
 	default:
 	  break;
-	
+
   }
 }
