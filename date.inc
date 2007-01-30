@@ -945,7 +945,7 @@ function date_text_input($params) {
   // if the jscalendar is used for input, add some attributes to be passed to the js
   // also need to adjust the date format slightly to accomodate the js capability
 
-  if ($jscalendar && module_exists('jscalendar')) {
+  if ($jscalendar && module_exist('jscalendar')) {
     $form[$field_name]['#attributes'] = array('class' => 'jscalendar');
     $form[$field_name]['#jscalendar_ifFormat'] = $formats['input']['jscal'];
     $form[$field_name]['#jscalendar_showsTime'] = date_has_time($granularity) ? 'true' : 'false';
