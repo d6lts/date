@@ -222,7 +222,7 @@ function date_views_arguments() {
       $argument = array();
       $argument['name'] = $field_types[$field['type']]['label'] .' '. $field['widget']['label'] .' ('. $field['field_name'] .')';
       $argument['handler'] = 'date_views_argument_range_handler';
-      $argument['help'] = t("Defines an argument to filter for dates within a range, in the format 'YYYY-MM-DD--YYYY-MM-DD'. Many other options can be used in arguments. See %link for other examples.", array('%link' => l(t('help'), 'admin/help/date')));
+      $argument['help'] = t("Defines an argument to filter for dates within a range, in the format 'YYYY-MM-DD--YYYY-MM-DD'. Many other options can be used in arguments. See !link for other examples.", array('!link' => l(t('help'), 'admin/help/date')));
       $argument['option'] = 'date_range_arg_options';
       $arguments['content: '. $field['field_name']] = $argument;
       break;
@@ -231,7 +231,7 @@ function date_views_arguments() {
       $argument = array();
       $argument['name'] = $field_types[$field['type']]['label'] .' '. $field['widget']['label'] .' ('. $field['field_name'] .')';
       $argument['handler'] = 'date_views_timestamp_argument_range_handler';
-      $argument['help'] = t("Defines an argument to filter for dates within a range, in the format 'YYYY-MM-DD--YYYY-MM-DD'. Many other options can be used in arguments. See %link for other examples.", array('%link' => l(t('help'), 'admin/help/date')));
+      $argument['help'] = t("Defines an argument to filter for dates within a range, in the format 'YYYY-MM-DD--YYYY-MM-DD'. Many other options can be used in arguments. See !link for other examples.", array('!link' => l(t('help'), 'admin/help/date')));
       $argument['option'] = 'date_range_arg_options';
       $arguments['content: '. $field['field_name']] = $argument;
       break;
