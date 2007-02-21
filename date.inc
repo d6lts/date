@@ -2138,20 +2138,23 @@ function date_sql($result_type, $field, $date_type = 'int', $offset = '', $offse
   // Convert integer field value to native date format.
   // Since FROM_UNIXTIME() and TIMESTAMP() are timezone adjusted,
   // remove server adj, correct offset will get added back in later step.
+  // Convert integer field value to native date format.
+  // Since FROM_UNIXTIME() and TIMESTAMP() are timezone adjusted,
+  // remove server adj, correct offset will get added back in later step.
   elseif ($date_type == 'int' && $field) {
     switch ($db_type) {
       case ('mysql'):
       case ('mysqli'):
+        $field = "FROM_UNIXTIME($field)";
         if (date_server_zone_adj()) {
           $field = "($field - INTERVAL ". date_server_zone_adj() ." SECOND)";
         }
-        $field = "FROM_UNIXTIME($field)";
-        break;
+                break;
       case ('postgres'):
+        $field = "TIMESTAMP($field::ABSTIME::INT4)";
         if (date_server_zone_adj()) {
           $field = "($field - INTERVAL ". date_server_zone_adj() ." SECONDS)";
         }
-        $field = "TIMESTAMP($field::ABSTIME::INT4)";
         break;
     }
   }
