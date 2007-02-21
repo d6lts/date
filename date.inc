@@ -2138,9 +2138,6 @@ function date_sql($result_type, $field, $date_type = 'int', $offset = '', $offse
   // Convert integer field value to native date format.
   // Since FROM_UNIXTIME() and TIMESTAMP() are timezone adjusted,
   // remove server adj, correct offset will get added back in later step.
-  // Convert integer field value to native date format.
-  // Since FROM_UNIXTIME() and TIMESTAMP() are timezone adjusted,
-  // remove server adj, correct offset will get added back in later step.
   elseif ($date_type == 'int' && $field) {
     switch ($db_type) {
       case ('mysql'):
