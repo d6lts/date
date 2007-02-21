@@ -58,8 +58,8 @@ function date_field_settings($op, $field) {
   include_once(drupal_get_path('module', 'date_api') .'/date.inc');
 
   switch ($op) {
-  case 'form':
-      include_once(DATE_TIMEZONES .'/date_timezones.inc');
+    case 'form':
+      include_once(DATE_TIMEZONES);
 
       $form = array();
       $tz_handling = $field['tz_handling'] ? $field['tz_handling'] : 'site';
