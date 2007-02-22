@@ -12,7 +12,7 @@
 /**
  * Implementation of hook_help().
  */
-function date_help($section) {
+function date_api_help($section) {
   switch ($section) {
     case 'admin/modules#description':
       return t('Makes the date api available to other modules.');
