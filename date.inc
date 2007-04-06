@@ -1859,6 +1859,40 @@ function date_formats($format, $granularity) {
 }
 
 /**
+ * An difference array of granularity elements that are NOT in the granularity array.
+ */
+function date_nongranularity_array($granularity) {
+  return array_diff(array('Y', 'M', 'D', 'H', 'N', 'S'), $granularity);
+}
+
+/**
+ * Strip date parts that are not in the granularity array out of a date format string.
+ */
+function date_strip_granularity($format, $granularity) {
+  $replace = array();
+  foreach (date_nongranularity_array($granularity) as $element) {
+    switch ($element) {
+      case 'D':
+        $replace += array('l,', 'l', 'D,', 'D-', 'D/', 'D', 'd,', 'd-', 'd/', 'd', 'j,', 'j-', 'j/', 'j');
+        break;
+      case 'M':
+        $replace += array('F,', 'F-', 'F/', 'F', 'M,', 'M-', 'M/', 'M', 'm,', 'm-', 'm/', 'm', 'n,', 'n-', 'n/', 'n');
+        break;
+      case 'H':
+        $replace += array('H:', 'H', 'h:', 'h', 'G:', 'g:', 'g', 'a', 'A', ' - ');
+        break;
+      case 'N':
+        $replace += array('i:', 'i');
+        break;
+      case 'S':
+        $replace += array('s');
+        break;
+    }
+  }
+  return str_replace($replace, '', $format);
+}
+
+/**
  *  Convert date() to strftime() format strings
  *
  *  @param $format - a format string for date()
