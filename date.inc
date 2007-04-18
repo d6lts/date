@@ -1883,6 +1883,48 @@ function date_nongranularity_array($granularity) {
 }
 
 /**
+ * Unset undesired date part values.
+*/
+function date_unset_granularity($item, $granularity, $type) {
+  if (!$nongranularity = date_nongranularity_array($granularity)) {
+   return $item;
+  }
+  else {
+   if ($type == DATE_ISO) {
+    $date = date_iso2array($item);
+   }
+   else {
+    $date = date_unix2array($item);
+   }
+   foreach ($nongranularity as $level) {
+     switch ($level) {
+       case 'S':
+         $date['seconds'] = 0;
+         break;
+       case 'N':
+         $date['minutes'] = 0;
+         break;
+       case 'H':
+         $date['hours'] = 0;
+         break;
+       case 'M':
+         $date['mon'] = $type == DATE_UNIX ? 1 : 0;
+         break;
+       case 'D':
+         $date['mday'] = $type == DATE_UNIX ? 1 : 0;
+         break;
+      }
+    }
+    if ($type == DATE_ISO) {
+      return date_array2iso($date);
+    }
+    else {
+      return date_array2unix($date);
+    }
+  }
+}
+
+/**
  * Strip date parts that are not in the granularity array out of a date format string.
  */
 function date_strip_granularity($format, $granularity) {
@@ -1890,19 +1932,19 @@ function date_strip_granularity($format, $granularity) {
   foreach (date_nongranularity_array($granularity) as $element) {
     switch ($element) {
       case 'D':
-        $replace += array('l,', 'l', 'D,', 'D-', 'D/', 'D', 'd,', 'd-', 'd/', 'd', 'j,', 'j-', 'j/', 'j');
+        $replace = array_merge($replace, array('l,', 'l', 'D,', 'D-', 'D/', 'D', 'd,', 'd-', 'd/', 'd', 'j,', 'j-', 'j/', 'j'));
         break;
       case 'M':
-        $replace += array('F,', 'F-', 'F/', 'F', 'M,', 'M-', 'M/', 'M', 'm,', 'm-', 'm/', 'm', 'n,', 'n-', 'n/', 'n');
+        $replace = array_merge($replace, array('F,', 'F-', 'F/', 'F', 'M,', 'M-', 'M/', 'M', 'm,', 'm-', 'm/', 'm', 'n,', 'n-', 'n/', 'n'));
         break;
       case 'H':
-        $replace += array('H:', 'H', 'h:', 'h', 'G:', 'g:', 'g', 'a', 'A', ' - ');
+        $replace = array_merge($replace, array('H:', 'H', 'h:', 'h', 'G:', 'g:', 'g', 'a', 'A', ' - '));
         break;
       case 'N':
-        $replace += array('i:', 'i');
+        $replace = array_merge($replace, array('i:', 'i'));
         break;
       case 'S':
-        $replace += array('s');
+        $replace = array_merge($replace, array('s'));
         break;
     }
   }
