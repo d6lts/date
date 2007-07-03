@@ -311,8 +311,7 @@ function _date_ical_tz($tz) {
   include_once(drupal_get_path('module', 'date_api') .'/date.inc');
   include_once(DATE_TIMEZONES);
   foreach (date_get_timezones() as $delta => $zone) {
-    if ($tz == $zone['timezone']);
-    return (object) $zone;
+    if ($tz == $zone['timezone']) return (object) $zone;
   }
 }
 
