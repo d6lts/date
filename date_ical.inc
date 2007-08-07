@@ -29,14 +29,14 @@ function date_ical_export($events, $calname = NULL) {
   $output .= "PRODID:-//strange bird labs//Drupal iCal API//EN\n";
   foreach ($events as $uid => $event) {
     $output .= "BEGIN:VEVENT\n";
-    $output .= "DTSTAMP;VALUE=DATE:". gmdate("Ymd\THis\Z", time()) ."\n";
+    $output .= "DTSTAMP;VALUE=DATE-TIME:". gmdate("Ymd\THis\Z", time()) ."\n";
     if ($event['allday_start'] && $event['allday_end']) {
-      $output .= "DTSTART;VALUE=DATE:". $event['allday_start'] ."\n";
-      $output .= "DTEND;VALUE=DATE:". $event['allday_end'] ."\n";
+      $output .= "DTSTART;VALUE=DATE-TIME:". $event['allday_start'] ."\n";
+      $output .= "DTEND;VALUE=DATE-TIME:". $event['allday_end'] ."\n";
     }
     else if ($event['allday_start'] && empty($event['allday_end'])) {
-      $output .= "DTSTART;VALUE=DATE:". $event['allday_start'] ."\n";
-      $output .= "DTEND;VALUE=DATE:". date('Ymd', strtotime($event['allday_start']) + 86400) ."\n"; //If no allday end date, set to day after allday start
+      $output .= "DTSTART;VALUE=DATE-TIME:". $event['allday_start'] ."\n";
+      $output .= "DTEND;VALUE=DATE-TIME:". date('Ymd', strtotime($event['allday_start']) + 86400) ."\n"; //If no allday end date, set to day after allday start
     }
     else if ($event['start'] && $event['end']) {
       $output .= "DTSTART;VALUE=DATE-TIME:". gmdate("Ymd\THis\Z", $event['start']) ."\n";
