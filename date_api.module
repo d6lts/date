@@ -64,3 +64,12 @@ else {
 function date_load($file) {
   include_once(DATE_API_PATH .'/'. $file);
 }
+
+/**
+ * Implementation of hook_simpletest().
+ */
+function date_api_simpletest() {
+  $dir = drupal_get_path('module', 'date_api') .'/tests';
+  $tests = file_scan_directory($dir, '\.test$');
+  return array_keys($tests);
+}
