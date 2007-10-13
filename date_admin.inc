@@ -281,7 +281,7 @@ function date_field_settings_form($field) {
     '#type' => 'select',
     '#title' => t('Site timezone'),
     '#default_value' => date_get_site_timezone(),
-    '#options' => drupal_map_assoc(date_timezone_options(variable_get('date_default_timezone', 'GMT'))),
+    '#options' => drupal_map_assoc(date_timezone_options()),
     '#description' => t('Select the timezone to be used as the site\'s timezone for all date fields in every content type in which they appear. List includes GMT and all timezones with the same GMT offset as the site timezone setting.'),
   );
 
