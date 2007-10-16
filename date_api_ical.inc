@@ -273,7 +273,7 @@ function date_ical_import($filename) {
 	          // Can't be sure whether DTSTART is before or after DURATION in
 	          // the VEVENT, so check for duration at both points.
 	          if ($property == 'DTSTART' && array_key_exists('DURATION', $subgroup)) {
-	            $subgroup['DURATION'] = date_ical_parse_duration($field, $data, $subgroup);
+	            $subgroup['DURATION'] = date_ical_parse_duration('DURATION', $subgroup['DURATION']['DATA'], $subgroup);
 	            $subgroup['DTEND'] = $subgroup['DURATION']['DTEND'];
 	          }
             break;
