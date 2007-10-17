@@ -158,6 +158,7 @@ function date_ical_escape_text($text) {
  */
 function date_ical_import($filename) {
   $items = array();
+  include_once('./'. drupal_get_path('module', 'date_api') .'/date.inc');
 
   // Fetch the iCal data. If file is a URL, use drupal_http_request. fopen
   // isn't always configured to allow network connections.
