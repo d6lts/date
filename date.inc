@@ -95,10 +95,10 @@ function date_mktime($array) {
   date_load_library();
   switch (DATE_LIBRARY) {
   case('ADODB'):
-    $timestamp = @adodb_mktime($array['hours'], $array['minutes'], $array['seconds'], $array['mon'], $array['mday'], $array['year']);
+    $timestamp = @adodb_mktime(intval($array['hours']), intval($array['minutes']), intval($array['seconds']), max(intval($array['mon']), 1), max(intval($array['mday']), 1), intval($array['year']) > 0 ? intval($array['year']) : date('Y'));
     return $timestamp;
   default:
-    $timestamp = @mktime($array['hours'], $array['minutes'], $array['seconds'], $array['mon'], $array['mday'], $array['year']);
+    $timestamp = @mktime(intval($array['hours']), intval($array['minutes']), intval($array['seconds']), max(intval($array['mon']), 1), max(intval($array['mday']), 1), intval($array['year']) > 0 ? intval($array['year']) : date('Y'));
     return $timestamp;
   }
 }
@@ -106,10 +106,10 @@ function date_gmmktime($array) {
   date_load_library();
   switch (DATE_LIBRARY) {
     case('ADODB'):
-    $timestamp = @adodb_gmmktime($array['hours'], $array['minutes'], $array['seconds'], $array['mon'], $array['mday'], $array['year']);
+    $timestamp = @adodb_gmmktime(intval($array['hours']), intval($array['minutes']), intval($array['seconds']), max(intval($array['mon']), 1), max(intval($array['mday']), 1), intval($array['year']) > 0 ? intval($array['year']) : date('Y'));
     return $timestamp;
   default:
-    $timestamp = @gmmktime($array['hours'], $array['minutes'], $array['seconds'], $array['mon'], $array['mday'], $array['year']);
+    $timestamp = @gmmktime(intval($array['hours']), intval($array['minutes']), intval($array['seconds']), max(intval($array['mon']), 1), max(intval($array['mday']), 1), intval($array['year']) > 0 ? intval($array['year']) : date('Y'));
     return $timestamp;
   }
 }
