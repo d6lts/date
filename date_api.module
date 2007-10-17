@@ -88,6 +88,23 @@ function date_pad($value, $size = 2) {
 }
 
 /**
+ * We do this in lots of places, so make it a function.
+ *
+ * @return a timezone name
+ *   Identify the default timezone for a user, if available, otherwise the site.
+ *   May return a blank value if no timezone info has been set up.
+ */
+function date_default_timezone_name($check_user = TRUE) {
+  global $user;
+  if ($check_user && variable_get('configurable_timezones', 1) && !empty($user->timezone_name)) {
+    return $user->timezone_name;
+  }
+  else {
+    return variable_get('date_default_timezone_name', '');
+  }
+}
+
+/**
  * Implementation of hook_simpletest().
  */
 function date_api_simpletest() {
