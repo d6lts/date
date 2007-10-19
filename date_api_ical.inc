@@ -40,7 +40,7 @@ function date_ical_export($events, $calname = NULL) {
   $output .= "PRODID:-//Drupal iCal API//EN\n";
   foreach ($events as $uid => $event) {
     // Skip any items with empty dates.
-    if (!empty($event['start'])  && ereg ('^(\d{4})(\d{2})(\d{2})$', $event['start'])) {
+    if (!empty($event['start'])) {
       $output .= "BEGIN:VEVENT\n";
       $output .= "DTSTAMP;VALUE=DATE-TIME:". gmdate("Ymd\THis\Z", time()) ."\n";
       $tz_append = '';
