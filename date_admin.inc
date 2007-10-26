@@ -5,8 +5,8 @@
  * Date administration code.
  * Moved to separate file since there is a lot of code here that is not needed often.
  */
-include_once(DATE_TIMEZONES);
-include_once(drupal_get_path('module', 'date_api') .'/date.inc');
+include_once('./'. drupal_get_path('module', 'date_api') .'/date_timezones.inc');
+include_once('./'. drupal_get_path('module', 'date_api') .'/date.inc');
 
 /**
  * Implementation of hook_widget_info().
