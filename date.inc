@@ -1369,6 +1369,7 @@ function date_custom2iso($date, $format) {
       case 'j':
         $final_date['mday'] = str_pad($value, 2, "0", STR_PAD_LEFT);
         break;
+      case 'n':
       case 'm':
         $final_date['mon'] = str_pad($value, 2, "0", STR_PAD_LEFT);
         break;
