@@ -232,8 +232,8 @@ function _date_views_arguments() {
 
   $field_types = _content_field_types();
   $arguments = array();
-
-  foreach (content_fields() as $field) {
+  $fields = content_fields();
+  foreach ($fields as $field) {
     $db_info = content_database_info($field);
     switch ($field['type']) {
     case 'date':
