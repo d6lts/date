@@ -1,3 +1,10 @@
+The files in this module have been reorganized and renamed. If you have an
+earlier version of the Date module installed, empty the original folder
+completely out and replace it with the new files. 
+
+If you don't remove the original files first, Drupal will try to use
+some of them and things will not work!!
+
 Installation instructions:
 
 1) Download the whole package of files from http://drupal.org/project/date.
