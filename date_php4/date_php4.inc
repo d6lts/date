@@ -505,7 +505,7 @@ if (!function_exists('date_modify')) {
       }
       elseif ($item == 'year') {
         // Move to the new year.
-        $year = date_part_extract($cdate, 'month');
+        $year = date_part_extract($cdate, 'year');
           for ($i = 1; $i < $count; $i++) {
           if ($direction = '+') {
             $year++;
