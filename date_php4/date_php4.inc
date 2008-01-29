@@ -415,7 +415,7 @@ if (!function_exists('date_modify')) {
     $time = substr($date->value, 11, 8);
 
     //Date is too old for strtotime(), or looking for custom +/- values, use date_calc instead.
-    if (substr($change, 0, 1) != '+' && substr($change, 0, 1) != '-'
+    if ((substr($change, 0, 1) != '+' || substr($change, 0, 1) != '-')
     && 1971 < date_part_extract($cdate, 'year')
     && date_part_extract($cdate, 'year') < 2038) {
       $cdate = strtotime($change, strtotime($cdate .' UTC'));
