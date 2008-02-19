@@ -116,8 +116,7 @@ function date_text_process($element, $edit = NULL) {
   // There are some cases, like when using this as a Views form element,
   // where $edit is empty and $element['#value'] holds an array of input values.
   // This happens when the processing bypasses the element validation step
-  // that resets the value from the date and time
-  // subparts.
+  // that resets the value from the date and time subparts.
   if (!empty($edit) || is_array($element['#value'])) {
     if (empty($edit)) {
       $edit = $element['#value'];
@@ -206,7 +205,7 @@ function date_parts_element($element, $date, $format) {
     $part_required = $element['#required'];
     $part_type = in_array($field, $element['#date_text_parts']) ? 'textfield' : 'select';
     $sub_element[$field] = array(
-      '#weight' => $order[$part],
+      '#weight' => $order[$field],
       '#required' => $element['#required'],
       '#attributes' => array('class' => $element['#attributes']['class'] .' date-'. $field),
       );
