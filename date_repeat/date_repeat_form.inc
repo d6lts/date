@@ -43,9 +43,9 @@ function _date_repeat_rrule_process($element) {
   else {
     $rrule = $element['#value'];
   }
-  // Unset the original string value of the RRULE so we can create
+  // Empty the original string value of the RRULE so we can create
   // an array of values for the form from the RRULE's contents.
-  unset($element['#value']);
+  $element['#value'] = '';
 
   $parts = date_repeat_split_rrule($rrule);
   $rrule = $parts[0];

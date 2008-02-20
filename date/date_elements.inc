@@ -172,7 +172,7 @@ function _date_widget($op, &$node, $field, &$items) {
       }
 
       // Add a date repeat form element, if needed.
-      if (module_exists('date_repeat') && $field['multiple'] == 99) {
+      if (module_exists('date_repeat') && $field['repeat'] == 1) {
         include_once(drupal_get_path('module', 'date') .'/date_repeat.inc');
         _date_repeat_widget($element, $node, $field, $items);
       }
