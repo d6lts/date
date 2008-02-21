@@ -52,7 +52,7 @@ function date_timezone_user_form(&$form) {
   $form['timezone']['#validate'] = array('date_timezone_update_user' => array());
   $form['timezone']['#uid'] = $account->uid;
   $form['timezone']['timezone']['#type'] = 'hidden';
-  $form['timezone']['timezone']['#value'] = $form['timezone']['#default_value'];
+  $form['timezone']['timezone']['#value'] = $form['timezone']['timezone']['#default_value'];
   $timezone = $account->timezone_name ? $account->timezone_name : variable_get('date_default_timezone_name', NULL);
 
   $form['timezone']['timezone_name'] = array(
