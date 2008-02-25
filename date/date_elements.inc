@@ -147,7 +147,7 @@ function _date_widget($op, &$node, $field, &$items) {
           '#validate' => array('date_widget_validate' => array()),
           ));
 
-      $max = $field['multiple'] == 1 ? 2 + sizeof($items) : 0;
+      $max = ($field['multiple'] == 1 && !$field['repeat']) ? 2 + sizeof($items) : 0;
       foreach (range(0, $max) as $delta) {
 
         $element[$field['field_name']][$delta] = array(
