@@ -843,7 +843,6 @@ function date_convert($date, $from_type, $to_type) {
       $obj = date_create($datetime, timezone_open('UTC'));
     case DATE_UNIX:
       if (!is_numeric($date)) return NULL;
-      return;
       $obj = date_create("@$date", timezone_open('UTC'));
       break;
   }
