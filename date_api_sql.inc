@@ -85,7 +85,7 @@ function date_sql_field($field, $field_type = 'int', $set_offset = NULL) {
           $field = "FROM_UNIXTIME($field)";
           break;
         case 'iso':
-          $field = "STR_TO_DATE($field, '%Y-%m-%%%%dT%T')";
+          $field = "STR_TO_DATE($field, '%Y-%m-%%dT%T')";
           break;
         case 'datetime':
           break;
