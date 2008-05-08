@@ -385,7 +385,7 @@ function date_combo_validate($element) {
     }
 
     if ($item[$from_field] > $item[$to_field]) {
-      form_set_error(implode('][', $element['#parents']), t('The From date must be greater than the To date.'));
+      form_set_error(implode('][', $element['#parents']), t('The To date must be greater than the From date.'));
     }
     else {
       // Convert input dates back to their UTC values and re-format to ISO
