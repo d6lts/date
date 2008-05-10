@@ -36,7 +36,7 @@ function date_widget_info() {
     'date_select' => array('label' => t('Select List'),
       'field types' => array('date', 'datestamp'),
     ),
-    'date_text' => array('label' => t('Text Field with strtotime validation'),
+    'date_text' => array('label' => t('Text Field with custom input format'),
       'field types' => array('date', 'datestamp'),
     ),
   );
