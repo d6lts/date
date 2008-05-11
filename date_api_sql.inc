@@ -173,6 +173,10 @@ class date_sql_handler {
         }
       break;
     }
+    // Fix Views bug that does double replacement of %%d.
+    // TODO remove once the bug fix gets into an official Views release.
+    $field = str_replace('%%d', '***SQLD***', $field);
+    
     // Adjust the resulting value to the right timezone/offset.
     return $this->sql_tz($field, $offset);
   }
@@ -267,7 +271,11 @@ class date_sql_handler {
           's' => '%s',
           );
         $format = strtr($format, $replace);
-        return "DATE_FORMAT($field, '$format')";
+        $field = "DATE_FORMAT($field, '$format')";
+        // Fix Views bug that does double replacement of %%d.
+        // TODO remove once the bug fix gets into an official Views release.
+        $field = str_replace('%%d', '***SQLD***', $field);
+        return $field;
       case 'pgsql':
         $replace = array(
           'Y' => 'YY',
