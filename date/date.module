@@ -387,6 +387,9 @@ if (!function_exists('date_token_list')) {
 function date_formatter_format($formatter, $field_name) {
   $fields = content_fields();
   $field = $fields[$field_name];
+  if ($field['tz_handling'] == 'date') {
+    $field['granularity'][] = 'timezone';
+  }  
   switch ($formatter) {
     case 'ical':
       return 'Ymd\THis';
