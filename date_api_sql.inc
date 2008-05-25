@@ -447,8 +447,11 @@ class date_sql_handler {
 
 /**
  * A class to manipulate date SQL.
+ * 
+ * This is the more feature-rich version from D6 that I'm going to start
+ * moving toward.
  */
-class date_sql_handler {
+class date_sql_handler2 {
   var $db_type = 'mysql';
   var $date_type = DATE_UNIX;
   var $db_timezone = 'UTC'; // A string timezone name.
