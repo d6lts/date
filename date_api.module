@@ -1231,7 +1231,7 @@ function date_limit_format($format, $granularity) {
         $regex[] = '([:]?[s])';
         break;
       case 'timezone':
-        $regex[] = array('([OZPe])');
+        $regex[] = '([OZPe])';
         break;
     
     }
