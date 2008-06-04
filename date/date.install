@@ -11,6 +11,7 @@ function date_install_load() {
   if (module_exists('views')) {
     include_once('./'. drupal_get_path('module', 'date') .'/date_views.inc');
   }
+  include_once('./'. drupal_get_path('module', 'date_timezone') .'/date_timezone.module');
 }
 
 /**
