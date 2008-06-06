@@ -342,7 +342,7 @@ function date_combo_validate($element) {
   $tz_field = 'timezone';
   $offset_field = 'offset';
   $offset_field2 = 'offset2';
-
+  
   // Update the timezone, if changed.
   $timezone = $element['#date_timezone'];
   if (!empty($form_values['timezone']) &&
@@ -407,7 +407,8 @@ function date_combo_validate($element) {
         $item[$from_field] = date_convert($item[$from_field], DATE_DATETIME, $field['type']);
         $item[$to_field] = date_convert($item[$to_field], DATE_DATETIME, $field['type']);
       }
-      $item['rrule'] = $rrule;
+      // TODO get RRULE working.
+      //$item['rrule'] = $rrule;
         
       form_set_value($element, $item);
     }
