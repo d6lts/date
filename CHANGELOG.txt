@@ -3,6 +3,10 @@ Date Module 5.2
 =================
 TODO
  - Get repeating dates working again.
+
+Version 5.2-dev
+=================
+- #270626 Fix documentation errors that use create_date() instead of date_create().
  
 Version 5.2-rc2
 =================
