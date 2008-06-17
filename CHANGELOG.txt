@@ -6,6 +6,7 @@ TODO
 
 Version 5.2-dev
 =================
+- Empty values were getting saved.
 - #257353 No need for format description when using select widget.
 - #270626 Fix documentation errors that use create_date() instead of date_create().
  
