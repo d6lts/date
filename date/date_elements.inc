@@ -334,7 +334,7 @@ function date_combo_process($element, $edit = NULL) {
  */
 function date_combo_validate($element) {
   global $form_values;
-
+  
   $field_name = $element['#parents'][0];
   $delta = $element['#parents'][1];
   $item = $form_values[$field_name][$delta];
@@ -348,10 +348,9 @@ function date_combo_validate($element) {
   
   // Update the timezone, if changed.
   $timezone = $element['#date_timezone'];
-  if (!empty($form_values['timezone']) &&
-    $form_values[$field_name]['timezone'] != $element['#date_timezone']) {
-    $timezone = $form_values[$field_name]['timezone'];
-    dsm('updating timezone to '. $timezone);
+  if (!empty($form_values[$field_name][0]['timezone']) &&
+    $form_values[$field_name][0]['timezone'] != $element['#date_timezone']) {
+    $timezone = $form_values[$field_name][0]['timezone'];
   }
   
   if (empty($item[$from_field])) {
