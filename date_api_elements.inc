@@ -145,6 +145,7 @@ function date_text_process($element, $edit = NULL) {
   // We'll set our own message on the parent element.
   //$element['date']['#required'] = $element['#required'];
   $element['date']['#theme'] = 'date_textfield_element';
+  $element['date']['#description'] .= ' '. t('Format: @date', array('@date' => date($element['#date_format'], time())));
   return $element;
 }
 
