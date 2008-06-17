@@ -129,7 +129,7 @@ function _date_widget($op, &$node, $field, &$items) {
       }
       $columns = array_keys($columns);
       $timezone = date_get_timezone($field['tz_handling'], $items[0]['timezone']);
-
+      
       // Convert UTC dates to their local values in DATETIME format,
       // and adjust the default values as specified in the field settings.
 
