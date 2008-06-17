@@ -75,8 +75,6 @@ function _date_field_update($op, &$node, $field, &$items, $teaser, $page) {
       }
     }
   }
-  dsm('saving '.$field['field_name']);
-  dsm($items);
   $node->$field['field_name'] = $items;
 }
 
