@@ -60,7 +60,9 @@ function _date_pathauto_node($op, $node = NULL) {
       node_invoke_nodeapi($node, 'view', false, false);
 
       foreach (content_fields() as $field) {
-        if ($field['type'] == 'date' || $field['type'] == 'datestamp' && is_array($field['granularity'])) {
+        if ($field['type_name'] == $node->type && 
+        ($field['type'] == 'date' || $field['type'] == 'datestamp') 
+        && is_array($field['granularity'])) {
           // this could probably be done better
           $fieldname = $field['field_name'];
           $datefield = $node->$fieldname;
