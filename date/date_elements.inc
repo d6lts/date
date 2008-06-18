@@ -321,6 +321,8 @@ function date_combo_process($element, $edit = NULL) {
     $element[$to_field]['#description'] = t('Empty \'To date\' values will use the \'From date\' values.');
     $element['#fieldset_description'] = t($field['widget']['description']);
   }
+  $element['#validate'] = array('date_combo_validate' => array());
+    
   return $element;
 }
 
@@ -330,7 +332,6 @@ function date_combo_process($element, $edit = NULL) {
  */
 function date_combo_validate($element) {
   global $form_values;
-  
   $field_name = $element['#parents'][0];
   $delta = $element['#parents'][1];
   $item = $form_values[$field_name][$delta];
@@ -348,7 +349,6 @@ function date_combo_validate($element) {
     $form_values[$field_name][0]['timezone'] != $element['#date_timezone']) {
     $timezone = $form_values[$field_name][0]['timezone'];
   }
-  
   if (empty($item[$from_field])) {
     $item[$from_field] = NULL;
     $item[$to_field]   = NULL;
@@ -408,7 +408,6 @@ function date_combo_validate($element) {
       }
       // TODO get RRULE working.
       //$item['rrule'] = $rrule;
-        
       form_set_value($element, $item);
     }
   }

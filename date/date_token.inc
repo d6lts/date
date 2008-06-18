@@ -34,7 +34,7 @@ function _date_token_list($type = 'all') {
 function _date_token_values($type, $object = NULL, $options = array()) {
   if ($type == 'field') {
     $item = $object[0];
-
+    
     $item['value'] = trim($item['value']);
     $item_type = (is_numeric($item['value']) ? DATE_UNIX : DATE_ISO);
     $timezone = !empty($item['timezone']) ? $item['timezone'] : date_default_timezone_name();
