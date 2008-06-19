@@ -322,7 +322,6 @@ function date_combo_process($element, $edit = NULL) {
     $element['#fieldset_description'] = t($field['widget']['description']);
   }
   $element['#validate'] = array('date_combo_validate' => array());
-    
   return $element;
 }
 
