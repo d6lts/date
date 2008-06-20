@@ -277,7 +277,7 @@ function date_combo_process($element, $edit = NULL) {
 
   $element[$from_field] = array(
     '#field'         => $field,
-    '#title'         => !$field['multiple'] ? t($field['widget']['label']) : '',
+    '#title'         => !$field['multiple'] || $delta == 0 ? t($field['widget']['label']) : '',
     '#weight'        => $field['widget']['weight'],
     '#description'   => empty($field['todate']) ? t($field['widget']['description']) : '',
     '#required'      => ($field['required'] && $delta == 0) ? 1 : 0,
