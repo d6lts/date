@@ -37,7 +37,6 @@ Timezone handling
 - #234360 fix date_server_zone_adj() function.
 
 Other
-
 - Clean up Date popup validation.
 - Fix undefined indexes in date_repeat_calc.inc.
 - #232959 Get rid of unwanted scrollbars in date fieldsets using trick discovered by threexk.
