@@ -334,6 +334,7 @@ function date_combo_validate($element) {
   $field_name = $element['#parents'][0];
   $delta = $element['#parents'][1];
   $item = $form_values[$field_name][$delta];
+  
   $field = $element['#field'];
   $delta = $element['#delta'];
   $from_field = 'value';
