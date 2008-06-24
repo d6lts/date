@@ -88,7 +88,6 @@ function date_field_formatter($field, $item, $formatter, $node) {
       return;
     }
   }
-
   // Call the right theme for this formatter.
   $dates = date_formatter_process($field, $item, $node, $formatter);
   if ($formatter != 'format_interval') {
