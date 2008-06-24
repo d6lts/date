@@ -44,7 +44,7 @@ function _date_widget_settings($op, &$field) {
         $date_parts = array('year', 'month', 'day');
         $intersection = array_intersect($date_parts, $field['granularity']);
         if ($intersection != $date_parts) {
-          form_set_error('granularity', t('The Date Popup widget not work unless granularity includes year, month, and day.'));
+          form_set_error('granularity', t('The Date Popup widget will not work unless granularity includes year, month, and day.'));
           
         }
       }
