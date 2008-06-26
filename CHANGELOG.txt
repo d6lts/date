@@ -38,6 +38,7 @@ Timezone handling
 
 Other
 
+- Remove as many dependencies as possible from install files and auto-enable necessary modules.
 - Date Popup was not handling empty non-required values correctly and they were defaulting to current date.
 - #273727 Small fixes to field settings validation.
 - #248338 and #254819 clean up date_limit_format() to better handle punctuation and escaped letters.
