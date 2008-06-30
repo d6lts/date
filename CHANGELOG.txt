@@ -40,6 +40,7 @@ Timezone handling
 
 Other
 
+- #276544 Rework system for handling timezone in date theme.
 - Rework Views filters, especially the 'now' and '+1' filters.
 - #251994 Add code to adjust NOW() by a number of seconds to allow NOW() to be the beginning of the day.
 - Was using wrong value for field type in Views and losing conversion to the right date value.
