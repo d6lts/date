@@ -18,6 +18,7 @@ New Features
 
 Timezone handling
 
+- Fix use of wrong value for timezone in repeating dates.
 - #270267 Remove timezone_identifiers_list() in the install file from the global space.
 - Change method of showing multiple values with timezones on forms and show them in every instance. 
   This is to simplify the processing and avoid errors when trying to apply the timezone in the 
