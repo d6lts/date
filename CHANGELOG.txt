@@ -39,6 +39,7 @@ Timezone handling
 
 Other
 
+- Was using wrong value for field type in Views and losing conversion to the right date value.
 - Remove as many dependencies as possible from install files and auto-enable necessary modules.
 - Date Popup was not handling empty non-required values correctly and they were defaulting to current date.
 - #273727 Small fixes to field settings validation.
