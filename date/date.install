@@ -331,7 +331,6 @@ function date_update_5104() {
  * Version 5.2 updates.
  */
 function date_update_5200() {
-  date_install_load();
   $ret = array();
   module_enable(array('date_timezone'));
 
