@@ -41,6 +41,7 @@ Timezone handling
 
 Other
 
+- #275213 Wrong year value in date_week_range().
 - #274403 Fix typo in date_hours().
 - #272110 Alter css so that from/to dates can float next to each other.
 - #275490 Remove orphaned punctuation at beginning of string in date_limit_format().
