@@ -135,6 +135,10 @@ function _date_views_timestamp_filter_handler($op, $filter, $filterinfo, &$query
   return _date_views_filter_handler($op, $filter, $filterinfo, $query, DATE_UNIX);
  }
 function _date_views_filter_handler($op, $filter, $filterinfo, &$query, $field_type = DATE_ISO) {
+  // Filter out 5.1 version values that won't work in 5.2.
+  if (isset($filter['value']['date']) && !preg_match(DATE_REGEX_LOOSE, $filter['value']['date'])) {
+    $filter['value'] = '';
+  }
   if (empty($filter['value']) && empty($filter['options'])) {
     return;
   }
