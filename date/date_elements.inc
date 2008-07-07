@@ -392,7 +392,6 @@ function date_combo_validate($element) {
     else {
       $item[$to_field] = $item[$from_field];
     }
-
     if ($item[$from_field] > $item[$to_field]) {
       form_set_error(implode('][', $element['#parents']), t('The To date must be greater than the From date.'));
     }
