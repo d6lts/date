@@ -705,7 +705,7 @@ class date_sql_handler {
   function arg_range($arg) {
     // Parse the argument to get its parts
     $parts = $this->arg_parts($arg);
-
+    
     // Intercept invalid info and fall back to the current date.
     if (empty($parts[0]) || empty($parts[0]['date']) && empty($parts[0]['period'])) {
       $now = date_now();
