@@ -48,6 +48,7 @@ Timezone handling
 
 Other
 
+- #264749 Fix typo in date_ical_date which unset the date.
 - Fix Date Browser week navigation.
 - #277420 Add missing format information for minutes and seconds to date_sql_handler.
 - Make sure the timezone always goes on its own line now that date elements float.
