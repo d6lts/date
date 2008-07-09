@@ -522,15 +522,15 @@ function date_views_browser_navigation($view, $period) {
   $range = $view->date_handler->arg_range($arg);
   $format = $view->date_handler->views_formats($period, 'sql');
   $date = drupal_clone($range[0]);
-    
   // Move backwards 1 period and create a link to that date.
   date_modify($date, '-1'. $period);
-  $prev = $view->url .'/'. date_format_date($date, 'custom', $format) . date_views_browser_period($period);
+  $prev = $period == 'week' ? date_format($date, 'Y-\W') . date_week(date_format($date, 'Y-m-d')) : date_format($date, $format);
+  $prev = $view->url .'/'. $prev . date_views_browser_period($period);
   // Move forward 2 periods (back to the current period and to the next period)
   // and create a link to that date.
   date_modify($date, '+2 '. $period);
-  $next = $view->url .'/'. date_format_date($date, 'custom', $format) . date_views_browser_period($period);
-
+  $next = $period == 'week' ? date_format($date, 'Y-\W') . date_week(date_format($date, 'Y-m-d')) : date_format($date, $format);
+  $next = $view->url .'/'. $next . date_views_browser_period($period);
   $label = theme('date_views_browser_period_label', $period, $range[0]);
   return theme('date_views_browser_navigation', $label, $period, $prev, $next, $view);
 }
