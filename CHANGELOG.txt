@@ -5,6 +5,8 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- Fix computation of year range in date_content_generate.
+
 Version 5.2-rc2
 ===============
 
