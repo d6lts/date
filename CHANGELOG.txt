@@ -50,6 +50,7 @@ Timezone handling
 
 Other
 
+- #275797 Remove invalid and unneeded css display:relative.
 - #280041 Fix typo in postgres switch code in date_api_sql.inc.
 - Make sure Date filter dates from both the Date Popup and a regular textfield get treated the same.
 - #264749 Fix typo in date_ical_date which unset the date.
