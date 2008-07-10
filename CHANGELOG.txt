@@ -48,6 +48,7 @@ Timezone handling
 
 Other
 
+- Make sure Date filter dates from both the Date Popup and a regular textfield get treated the same.
 - #264749 Fix typo in date_ical_date which unset the date.
 - Fix Date Browser week navigation.
 - #277420 Add missing format information for minutes and seconds to date_sql_handler.
