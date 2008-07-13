@@ -206,7 +206,8 @@ function _date_views_filter_handler($op, $filter, $filterinfo, &$query, $field_t
         $sql = $date_handler->sql_where_extract($filterinfo['type'], $sql_field, $filter['operator'], $value, FALSE);
         break;
       default:
-        $granularity = array_pop($field['granularity']);
+        $granularity = drupal_clone($field['granularity']);
+        $granularity = array_pop(array_filter($granularity));
         $format = $date_handler->views_formats($granularity, 'sql');
         $sql = $date_handler->sql_where_format($format, $sql_field, $filter['operator'], date_format($date, $format));
         break;

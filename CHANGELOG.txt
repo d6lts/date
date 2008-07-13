@@ -5,6 +5,8 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #277420 Change logic for setting granularity of view format to use drupal_clone to prevent problem where format got set to year in PHP4.
+- #277420 Another fix to make sure official release of Views does not wipe out %%d.
 - Format interval theme added 'ago' twice to past events.
 - Need a space between the date and the timezone name in the Date theme.
 - #280899, #273344 Make sure Date Popup doesn't inject the current date into empty fields.
