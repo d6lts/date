@@ -257,6 +257,9 @@ class date_sql_handler {
           's' => '%s',
           );
         $format = strtr($format, $replace);
+        // Fix Views bug that does double replacement of %%d.
+        // TODO remove once the bug fix gets into an official Views release.
+        $format = str_replace('%%d', '***SQLD***', $format);
         return "DATE_FORMAT($field, '$format')";
       case 'pgsql':
         $replace = array(
