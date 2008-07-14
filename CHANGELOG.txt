@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- Switch old jscalendar widgets to use date_select instead of date_popup since date_popup may not be available.
 - Make sure empty time does not get value on submit.
 - Use same date widget for Views filter as the field uses.
 - Rework argument handling and break out each op as a separate handler to simplify maintenance.
