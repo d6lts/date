@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- Make sure empty time does not get value on submit.
 - Use same date widget for Views filter as the field uses.
 - Rework argument handling and break out each op as a separate handler to simplify maintenance.
 - #277420 Change logic for setting granularity of view format to use drupal_clone to prevent problem where format got set to year in PHP4.
