@@ -181,7 +181,6 @@ function _date_views_filter_handler($op, $filter, $filterinfo, &$query, $field_t
   // Comparing to NOW.
   if (empty($value) && !empty($filter['options'])) {
     $date = date_now();
-    date_timezone_set($date, timezone_open($timezone));
     if (!empty($adjustment)){
       date_modify($date, $adjustment);
     }
