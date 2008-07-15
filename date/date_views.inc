@@ -317,7 +317,7 @@ function _date_views_argument_title($query, $argtype, $arg, $field_type) {
   $granularity = array_pop($argtype_parts);
   $format = $date_handler->views_formats($granularity, 'display');
   $range = $date_handler->arg_range($query);
-  return date_format($range[0], $format);
+  return date_format_date($range[0], 'custom', $format);
 }
 
 /**
@@ -385,10 +385,8 @@ function _date_views_argument_link(&$query, $argtype, $arg, $field_type) {
   $argtype_parts = explode('_', $argtype);
   $granularity = array_pop($argtype_parts);
   $format = $date_handler->views_formats($granularity, 'display');
-  $datetime = $field_type == DATE_ISO ? date_fuzzy_datetime($query->$value) : date_convert($query->$value, DATE_UNIX, DATE_DATETIME);
   $range = $date_handler->arg_range($query->$value);
-  $date = date_make_date($datetime, $query->date_handler->local_timezone);
-  return l(date_format_date($date, 'custom', $format), $arg .'/'. $query->range);
+  return l(date_format_date($range[0], 'custom', $format), $arg .'/'. $query->range);
 }
 
 /**

@@ -4,6 +4,10 @@ Date Module 5.2
 
 Version 5.2-dev
 =================
+- Make sure partial dates, like year-only, get the right range computed for them.
+
+Version 5.2-rc3
+===============
 
 - #282408 Make sure dates only float when there are two of them by adding #date_float parameter.
 - Add sort to argument handler.
