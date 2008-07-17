@@ -4,6 +4,8 @@ Date Module 5.2
 
 Version 5.2-dev
 =================
+
+- #282408 Fix mistake in css float that caused all date parts to move to new line.
 - Make sure partial dates, like year-only, get the right range computed for them.
 
 Version 5.2-rc3
