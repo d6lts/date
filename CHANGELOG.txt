@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- Add PHP documentation about difference between Views widgets and regular FAPI element processing values.
 - #282408 Fix mistake in css float that caused all date parts to move to new line.
 - Make sure partial dates, like year-only, get the right range computed for them.
 
