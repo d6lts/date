@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- Check for invalid inputs to the date handler argument handling.
 - Move the class configuration to the theme so it is easier for themers.
 - #284455 Fix copy/paste error in date.install that used D6 function content_instance_tablename.
 - Remove code previously commented out that forced required value to current date, seems to be working right.
