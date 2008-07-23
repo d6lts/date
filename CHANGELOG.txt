@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- Set a warning message for invalid non-required Date popup values instead of silently setting to NULL.
 - Check for invalid inputs to the date handler argument handling.
 - Move the class configuration to the theme so it is easier for themers.
 - #284455 Fix copy/paste error in date.install that used D6 function content_instance_tablename.
