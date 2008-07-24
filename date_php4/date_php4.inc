@@ -63,7 +63,7 @@ if (!function_exists('date_create')) {
   function date_create($date_in = NULL, $timezone = NULL) {
     if (empty($date_in) || strtolower($date_in) == 'now') {
       // Create a current date for an empty value or 'now'.
-      $date_out = date_date('Y-m-d H:i:s', (time() - date('Z')));
+      $date_out = date_date('Y-m-d H:i:s', (time()), $timezone);
     }
     elseif (substr($date_in, 0, 1) == '@' && is_numeric(substr($date_in, 1))) {
       // An number prefixed with '@' is interpreted as a timestamp.
@@ -85,11 +85,11 @@ if (!function_exists('date_create')) {
     if (empty($date_out)) {
       return NULL;
     }
-    
     $date = new StdClass();
     $date->value = $date_out;
     $date->timestamp = date_datetime2timestamp($date->value, $timezone);
     $date->timezone = $timezone;
+    
     if (!date_is_valid($date, DATE_OBJECT)) {
       // Must be a value we can't interpret. Throw an error.
       return NULL;
