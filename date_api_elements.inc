@@ -455,7 +455,7 @@ function date_text_input_value($element) {
   $granularity = date_format_order($element['#date_format']);
   $non_granularity = date_nongranularity($granularity);
   if (array_intersect($non_granularity, array('year', 'month', 'day'))) {
-    $value = date_fuzzy_datetime(str_replace(' ', 'T', $value));
+    $value = date_fuzzy_datetime($value);
   }
   
   // If it creates a valid date, use it.
