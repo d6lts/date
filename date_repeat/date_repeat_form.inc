@@ -208,18 +208,18 @@ function date_repeat_merge($form_values) {
   }
   if (array_key_exists('advanced', $form_values) || array_key_exists('exceptions', $form_values)) {
     $form_values = array_merge($form_values, (array) $form_values['advanced'], (array) $form_values['exceptions']);
-    unset($form_values['advanced']);
-    unset($form_values['exceptions']);
-    unset($form_values['help']);
+    if (array_key_exists('advanced', $form_values)) unset($form_values['advanced']);
+    if (array_key_exists('exceptions', $form_values)) unset($form_values['exceptions']);
+    if (array_key_exists('help', $form_values)) unset($form_values['help']);
   }
-  unset($form_values['BYDAY']['']);
-  unset($form_values['BYMONTH']['']);
-  unset($form_values['BYMONTHDAY']['']);
+  if (array_key_exists('BYDAY', $form_values)) unset($form_values['BYDAY']['']);
+  if (array_key_exists('BYMONTH', $form_values)) unset($form_values['BYMONTH']['']);
+  if (array_key_exists('BYMONTHDAY', $form_values)) unset($form_values['BYMONTHDAY']['']);
 
   if (is_array($form_values['UNTIL']['datetime']) && array_key_exists('date', $form_values['UNTIL']['datetime'])) {
     $form_values['UNTIL']['datetime'] = $form_values['UNTIL']['datetime']['date'];
   }
-  if (is_array($form_values['EXDATE'])) {
+  if (isset($form_values['EXDATE']) && is_array($form_values['EXDATE'])) {
     foreach ($form_values['EXDATE'] as $delta => $value) {
       if (is_array($value['datetime']) && array_key_exists('date', $value['datetime'])) {
        $form_values['EXDATE'][$delta]['datetime'] = $value['datetime']['date'];
