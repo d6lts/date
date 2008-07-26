@@ -88,6 +88,7 @@ function _date_api_elements() {
  *   the timezone form element
  */
 function date_timezone_process($element, $edit = NULL) {
+  $element['#tree'] = TRUE;
   $element['timezone'] = array(
     '#type' => 'select',
     '#title' => theme('date_part_label_timezone', 'select', $element),
@@ -477,8 +478,7 @@ function date_text_input_value($element) {
  *  Move the timezone value from the nested field back to the original field.
  */
 function date_timezone_validate($element) {
-  array_pop($element['#parents']);
-  form_set_value($element, $element['#value']);
+  form_set_value($element, $element['#value']['timezone']);
 }
 
 
