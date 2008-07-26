@@ -1391,9 +1391,8 @@ function date_api_views_query_substitutions($view) {
  */
 function date_format_options() {
   global $user;
-  $options = array();
   $cached = cache_get('date_format_options:'. $user->uid);
-  $options = isset($cached->data) ? $cached->data : array();
+  $options = unserialize($cached->data);
   if (empty($options)) {
     $formats = array_merge(date_short_formats(), date_medium_formats(), date_long_formats());
     $options = array();
@@ -1413,7 +1412,7 @@ function date_format_options() {
       asort($options);
     }
     if (!empty($options)) {
-      cache_set('date_format_options:'. $user->uid, $options, 'cache', CACHE_TEMPORARY);
+      cache_set('date_format_options:'. $user->uid, 'cache', serialize($options), CACHE_TEMPORARY);
     }
   }
   return $options;
