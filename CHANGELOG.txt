@@ -5,6 +5,11 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- Make sure PHP4 wrapper code doesn't try to use date() on values outside the 32 bit signed range.
+
+Version 5.2-rc4
+===============
+
 - #286454 Add fix for Views substitutions error handling %%s to work like the fix for %%d.
 - #286864 Fix wrong RRULE value being passed to validator and add trim() to get repeating dates working again.
 - #286864 Need a different fix for timezone API since this fix broke Date Repeat.
