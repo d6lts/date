@@ -589,6 +589,10 @@ class date_sql_handler {
     // Start with the site long date format and add seconds to it
     $long = str_replace(':i', ':i:s', variable_get('date_format_long',  'l, F j, Y - H:i'));
     switch ($granularity) {
+      case('date'):
+        $formats['display'] = $long;
+        $formats['sql'] = 'Y-m-d H:i:s';
+        break;
       case('year'):
         $formats['display'] = 'Y';
         $formats['sql'] = 'Y';
