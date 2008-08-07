@@ -5,6 +5,9 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+Version 5.2-rc5
+===============
+
 - #291044 Default date filter value will already be a valid datetime, don't try to adjust it.
 - Check for date values before using new all day theme.
 - #291683 Make sure that date range arguments will create the proper queries, titles, and links.
