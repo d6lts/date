@@ -356,6 +356,10 @@ function date_views_handler_filter_date_value_form($field) {
   include_once(drupal_get_path('module', 'date') .'/date_views.inc');
   return _date_views_handler_filter_date_value_form($field);
 }
+function date_views_filter_value($element) {
+  include_once(drupal_get_path('module', 'date') .'/date_views.inc');
+  return _date_views_filter_value($element);
+}
 function date_views_timestamp_argument_range_handler($op, &$query, $argtype, $arg = '') {
   include_once(drupal_get_path('module', 'date') .'/date_views.inc');
   return _date_views_timestamp_argument_range_handler($op, $query, $argtype, $arg);
