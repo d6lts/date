@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #294950 Several things in the Date Browser view were broken, including a fatal error from a missing function.
 - #295753 Make sure exposed views filter does not use date if no default values are selected.
 
 Version 5.2-rc6
