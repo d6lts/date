@@ -264,17 +264,27 @@ function _date_views_filter_value($element) {
     $name = $element['#name'];
     if (empty($_GET[$name])) {
       $view = $GLOBALS['current_view'];
+      $delta = trim(str_replace('filter', '', $name));
+      $adjustment = $view->filter[$delta]['options'];
+      $value = $view->filter[$delta]['value'];
+      
+      // Don't inject a date value if there is no default set.
+      if (empty($value) && empty($adjustment)) {
+        return;
+      }
       // Don't inject a date value if we're in the Views UI.
       $current_path = explode('/', $_GET['q']);
       if (array_pop($current_path) == 'edit') {
         return;
       }
-      $delta = trim(str_replace('filter', '', $name));
-      $adjustment = $view->filter[$delta]['options'];
-      $now = date_now();
       if (!empty($adjustment)) {
+        $now = date_now();
         date_modify($now, $adjustment);
       }
+      else {
+        $now = date_make_date($value);
+      }
+      
       switch ($element['#type']) {
         case 'date_select':
           return date_convert($now, DATE_OBJECT, DATE_ARRAY);

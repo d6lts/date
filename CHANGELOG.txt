@@ -5,6 +5,8 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #295753 Make sure exposed views filter does not use date if no default values are selected.
+
 Version 5.2-rc6
 ===============
 
