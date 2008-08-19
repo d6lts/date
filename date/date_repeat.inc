@@ -29,6 +29,9 @@
  * to create the element delta values.
  */
 function _date_repeat_widget(&$element, &$node, $field, &$items) {
+  if (empty($element['#field'])) {
+    $element['#field'] = $field;
+  }
   $element[$field['field_name']]['rrule'] = array(
     '#type' => 'date_repeat_rrule',
     '#default_value' => $items[0]['rrule'],
