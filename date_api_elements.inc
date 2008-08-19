@@ -383,7 +383,14 @@ function date_increment_round(&$date, $increment) {
  *  Validation function for date selector.
  */
 function date_select_validate($element) {
+  // Strip field labels out of the results.
+  foreach ($element['#value'] as $field => $field_value) {
+    if (substr($field_value, 0, 1) == '-') {
+      $element['#value'][$field] = '';
+    }
+  }
   $value = date_select_input_value($element);
+  
   // If the field is empty and not required, set it to empty and return.
   if (empty($value) && !$element['#required']) {
     form_set_value($element, NULL);
@@ -393,12 +400,6 @@ function date_select_validate($element) {
   $error_field = implode('][', $element['#parents']);
   $granularity = array_values(date_format_order($element['#date_format']));
 
-  // Strip field labels out of the results.
-  foreach ($element['#value'] as $field => $value) {
-    if (substr($value, 0, 1) == '-') {
-      $element['#value'][$field] = '';
-    }
-  }
   if ($element['#value']['ampm'] == 'pm' && $element['#value']['hour'] < 12) {
     $element['#value']['hour'] += 12;
   }
