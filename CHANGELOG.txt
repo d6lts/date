@@ -5,6 +5,8 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #296409 Fix the hidden repeat date logic so repeating dates are only hidden on the node.
+
 Version 5.2-rc7
 ===============
 
