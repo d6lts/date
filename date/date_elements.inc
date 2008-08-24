@@ -212,7 +212,7 @@ function date_local_date($delta, $item, $timezone, $field, $part = 'value') {
       return NULL;
     }
     elseif ($part == 'value2' && $default_value == 'same') {
-      if ($field['widget']['default_value'] == 'blank') {
+      if ($field['widget']['default_value'] == 'blank' || empty($item['value'])) {
         return NULL;
       }
       else {
