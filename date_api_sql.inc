@@ -53,9 +53,11 @@ class date_sql_handler {
       switch ($this->db_type) {
         case 'mysql':
         case 'mysqli':
-          $test = db_result(db_query("SELECT CONVERT_TZ('2008-02-15 12:00:00', 'UTC', 'US/Central')"));
-          if ($test == '2008-02-15 06:00:00') {
-            $has_support = TRUE;
+          if ($this->db_type == 'mysqli' && version_compare(db_version(), '4.1.3', '>=')) {
+            $test = db_result(db_query("SELECT CONVERT_TZ('2008-02-15 12:00:00', 'UTC', 'US/Central')"));
+            if ($test == '2008-02-15 06:00:00') {
+              $has_support = TRUE;
+            }
           }
           break;
         case 'pgsql':
@@ -140,7 +142,9 @@ class date_sql_handler {
             $field = "FROM_UNIXTIME($field)";
             break;
           case DATE_ISO:
-            $field = "STR_TO_DATE($field, '%Y-%m-%%dT%T')";
+            if ($this->db_type == 'mysqli' && version_compare(db_version(), '4.1.1', '>=')) {
+              $field = "STR_TO_DATE($field, '%Y-%m-%%dT%T')";
+            }
             break;
           case DATE_DATETIME:
             break;
@@ -172,10 +176,16 @@ class date_sql_handler {
    */
   function sql_offset($field, $offset = NULL) {
     if (!empty($offset)) {
+      $op = ($offset < 0 ? '-' : '');
       switch ($this->db_type) {
         case 'mysql':
         case 'mysqli':
-          return "ADDTIME($field, SEC_TO_TIME($offset))";
+          if ($this->db_type == 'mysqli' && version_compare(db_version(), '4.1.1', '>=')) {
+            return "ADDTIME($field, SEC_TO_TIME($offset))";
+          }
+          else {
+            return "DATE_ADD($field, INTERVAL $offset SECOND)";
+          }
         case 'pgsql':
           return "($field + 'INTERVAL $offset SECONDS')";;
       }

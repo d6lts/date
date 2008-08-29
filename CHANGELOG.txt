@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #299594 Alter date_api_sql to handle MYSQL versions prior to 4.1.1.
 - Get rid of another copy/paste error using content_instance_tablename().
 - #297733 Make more kinds of custom formats display correctly.
 - Change date description for empty 'to' dates to only be used on date_select, the only place it will work.
