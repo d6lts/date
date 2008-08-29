@@ -187,7 +187,7 @@ class date_sql_handler {
             return "DATE_ADD($field, INTERVAL $offset SECOND)";
           }
         case 'pgsql':
-          return "($field + 'INTERVAL $offset SECONDS')";;
+          return "($field + INTERVAL '$offset SECONDS')";;
       }
     }
     return $field;
