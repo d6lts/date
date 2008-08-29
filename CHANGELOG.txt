@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #294185 Add test for non-NULL values when concating the from/to date values, using COALESCE.
 - #300319 Move apostrophe in PostgreSQL offset code.
 - #299594 Alter date_api_sql to handle MYSQL versions prior to 4.1.1.
 - Get rid of another copy/paste error using content_instance_tablename().

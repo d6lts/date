@@ -529,7 +529,9 @@ function _date_views_query_alter(&$query, &$view) {
     // Add a combo FROM|TO date field to the query
     $value  = $db_info['columns']['value']['column'];
     $value2 = !empty($db_info['columns']['value2']['column']) ? $db_info['columns']['value2']['column'] : $db_info['columns']['value']['column'];
-    $combo  = date_sql_concat(array($table .'.'. $value, "'|'", $table .'.'. $value2)) .' AS date_combo ';
+    $value1 = date_sql_coalesce(array($table .'.'. $value, '0000-00-00 00:00:00'));
+    $value2 = date_sql_coalesce(array($table .'.'. $value2, $table .'.'. $value, '0000-00-00 00:00:00'));
+    $combo  = date_sql_concat(array($value1, "'|'", $value2)) .' AS date_combo ';
     $query->add_field($combo, NULL);
     $path = explode('/', $view->url);
     $pos = sizeof($path);
