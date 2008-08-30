@@ -467,6 +467,14 @@ function date_select_validate($element) {
     form_set_error($error_field, implode(' ', $errors));
   }
   
+  if (isset($element['#value']['ampm'])) {
+    if ($element['#value']['ampm'] == 'pm' && $element['#value']['hour'] < 12) {
+      $element['#value']['hour'] += 12;
+    }
+    elseif ($element['#value']['ampm'] == 'am' && $element['#value']['hour'] == 12) {
+      $element['#value']['hour'] -= 12;
+    }
+  }
   $value = date_select_input_value($element);
   
   // If there are no errors and the value is valid, set it.
