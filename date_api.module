@@ -1339,7 +1339,7 @@ function date_api_simpletest() {
  * Implementation of hook_elements().
  */
 function date_api_elements() {
-  include_once(drupal_get_path('module', 'date_api') .'/date_api_elements.inc');
+  require_once('./'. drupal_get_path('module', 'date_api') .'/date_api_elements.inc');
   return _date_api_elements();
 }
 
@@ -1348,7 +1348,7 @@ function date_api_elements() {
  * Wrapper around date handler setting for timezone.
  */
 function date_api_set_db_timezone($offset = '+00:00') {
-  include_once(drupal_get_path('module', 'date_api') .'/date_api_sql.inc');
+  require_once('./'. drupal_get_path('module', 'date_api') .'/date_api_sql.inc');
   $handler = new date_sql_handler();
   return $handler->set_db_timezone($offset);
 }

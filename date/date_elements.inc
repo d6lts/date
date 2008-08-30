@@ -121,7 +121,7 @@ function _date_widget($op, &$node, $field, &$items) {
       return array(0 => array('value' => NULL, 'value2' => NULL));
 
     case 'form':
-      include_once(drupal_get_path('module', 'date_api') .'/date_api_elements.inc');
+      require_once('./'. drupal_get_path('module', 'date_api') .'/date_api_elements.inc');
       $db_info = content_database_info($field);
       $columns = $db_info['columns'];
       if (isset($columns['rrule'])) {
@@ -182,7 +182,7 @@ function _date_widget($op, &$node, $field, &$items) {
 
       // Add a date repeat form element, if needed.
       if (module_exists('date_repeat') && $field['repeat'] == 1) {
-        include_once(drupal_get_path('module', 'date') .'/date_repeat.inc');
+        require_once('./'. drupal_get_path('module', 'date') .'/date_repeat.inc');
         _date_repeat_widget($element, $node, $field, $items);
       }
       return $element;
@@ -433,7 +433,7 @@ function date_widget_validate($element) {
   $field = $element[0]['#field'];
 
   if (module_exists('date_repeat') && array_key_exists('rrule', $form_values[$field_name])) {
-    include_once(drupal_get_path('module', 'date') .'/date_repeat.inc');
+    require_once('./'. drupal_get_path('module', 'date') .'/date_repeat.inc');
     return _date_repeat_widget_validate($element);
   }
 }

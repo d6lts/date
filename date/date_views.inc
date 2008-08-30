@@ -134,8 +134,8 @@ function _date_views_timestamp_filter_handler($op, $filter, $filterinfo, &$query
   return _date_views_filter_handler($op, $filter, $filterinfo, $query, DATE_UNIX);
  }
 function _date_views_filter_handler($op, $filter, $filterinfo, &$query, $field_type = DATE_ISO) {
-  include_once('./'. drupal_get_path('module', 'date_api') .'/date_api_sql.inc');
-  include_once('./'. drupal_get_path('module', 'date_api') .'/date_api_elements.inc');
+  require_once('./'. drupal_get_path('module', 'date_api') .'/date_api_sql.inc');
+  require_once('./'. drupal_get_path('module', 'date_api') .'/date_api_elements.inc');
 
   // $filter['value'] could either be an array of 'date' and 'time',
   // or an array of date parts, or a single value, depending on which 
@@ -239,7 +239,7 @@ function _date_views_handler_filter_date_value_form($field) {
   $types = content_types($field['type_name']);
   $field = $types['fields'][$field['field_name']];
   $format = !empty($field['widget']['input_format_custom']) ? $field['widget']['input_format_custom'] : $field['widget']['input_format'];
-  include_once(drupal_get_path('module', 'date_api') .'/date_api_elements.inc');
+  require_once('./'. drupal_get_path('module', 'date_api') .'/date_api_elements.inc');
   $form = array(
     '#type' => $field['widget']['type'],
     '#date_timezone' => date_default_timezone_name(),
@@ -313,7 +313,7 @@ function _date_views_timestamp_argument_range_handler($op, &$query, $argtype, $a
   return _date_views_argument_range_handler($op, $query, $argtype, $arg, DATE_UNIX);
 }
 function _date_views_argument_range_handler($op, &$query, $argtype, $arg = '', $field_type = DATE_ISO) {
-  include_once('./'. drupal_get_path('module', 'date_api') .'/date_api_sql.inc');
+  require_once('./'. drupal_get_path('module', 'date_api') .'/date_api_sql.inc');
   // Switch to the function that matches the requested $op.
   $function = '_date_views_argument_'.$op;
   return $function($query, $argtype, $arg, $field_type);
@@ -509,7 +509,7 @@ function date_browser_validate($type, $view, $form) {
  *  Used to make sure Date Browser view defaults to current date if no date selected
  */
 function _date_views_query_alter(&$query, &$view) {
-  include_once('./'. drupal_get_path('module', 'date_api') .'/date_api_sql.inc');
+  require_once('./'. drupal_get_path('module', 'date_api') .'/date_api_sql.inc');
   $date_views_browser_views = date_views_browser_get_views();
   if (in_array($view->name, array_keys($date_views_browser_views))) {
     
