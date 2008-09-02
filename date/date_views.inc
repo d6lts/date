@@ -437,12 +437,10 @@ function _date_views_argument_link(&$query, $argtype, $arg, $field_type) {
   if (empty($query->range)) {
     return t('N/A');
   }
-  $field_name = _date_views_arg_field_name($argtype);
-  $value = $field_name .'_'. (substr($field_name, -1) == 2 ? 'value2' : 'value');
   $date_handler = new date_sql_handler();
   $granularity = $date_handler->arg_granularity($query->range);
   $format = $date_handler->views_formats($granularity, 'display');
-  $range = $date_handler->arg_range($query->$value);
+  $range = $date_handler->arg_range($query->range);
   $formatted = date_format_date($range[0], 'custom', $format);
   $formatted2 = date_format_date($range[1], 'custom', $format);
   if ($formatted != $formatted2) {
