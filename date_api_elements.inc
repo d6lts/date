@@ -406,14 +406,6 @@ function date_select_validate($element) {
   $error_field = implode('][', $element['#parents']);
   $errors = array();
   
-  if (isset($element['#value']['ampm'])) {
-    if ($element['#value']['ampm'] == 'pm' && $element['#value']['hour'] < 12) {
-      $element['#value']['hour'] += 12;
-    }
-    elseif ($element['#value']['ampm'] == 'am' && $element['#value']['hour'] == 12) {
-      $element['#value']['hour'] -= 12;
-    }
-  }
   if (in_array('year', $element['#granularity']) && ($element['#required'] || !empty($element['#value']['year']))) {
     if ($element['#value']['year'] < variable_get('date_min_year', 1) || $element['#value']['year'] > variable_get('date_max_year', 4000)) {
       $errors[] = t('The year must be a number between %min and %max.', array(
