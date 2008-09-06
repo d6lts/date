@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #304631 Fix validation check for required field that was always triggered.
 - #304762 Add missing folders for translations.
 
 Version 5.2.1
