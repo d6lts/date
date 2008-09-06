@@ -5,6 +5,8 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #304762 Add missing folders for translations.
+
 Version 5.2.1
 ===============
 - Move timezone handling logic to Date API so we can use it in Calendar, too.
