@@ -5,6 +5,8 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+Version 5.2.2
+===============
 - Fix critial error in date_t() that was returning nothing for translated names.
 - Add some validation to date repeat logic to avoid trying to process invalid values.
 - #304631 Fix validation check for required field that was always triggered.
