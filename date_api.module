@@ -512,8 +512,8 @@ function date_t($string) {
       $replace[$untranslated[$delta]] = $day;
       $replace[drupal_substr($untranslated[$delta], 0, 3)] = drupal_substr($day, 0, 3);
     }
-    return strtr($string, $replace);
   }
+  return strtr($string, $replace);
 }
 
 /**
