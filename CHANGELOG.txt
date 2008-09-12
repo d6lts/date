@@ -5,6 +5,8 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #306819, #307406 Month translated was using wrong variable name.
+
 Version 5.2.2
 ===============
 - Fix critial error in date_t() that was returning nothing for translated names.
