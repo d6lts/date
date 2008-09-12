@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #307406 Remove debug cruft from Date Popup.
 - #306819, #307406 Month translated was using wrong variable name.
 
 Version 5.2.2
