@@ -91,7 +91,7 @@ function theme_date_display_combination($field, $item, $dates, $node = NULL) {
     $time2 = preg_replace('([\)\]]$)', '', $time2);
     $time = '<span class="date-display-start">'. $time1 .'</span>'.
       '<span class="date-display-separator"> - </span>'.
-      '<span class="date-display-end">'. $time2;
+      '<span class="date-display-end">'. $time2 .'</span>';
     $replaced = str_replace($time1, $time, $date1);
     $output .= '<span class="date-display-single">'. $replaced .' '. $timezone .'</span> ';
   }

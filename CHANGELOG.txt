@@ -5,6 +5,8 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #312974 Add missing closing span in date theme.
+
 Version 5.2.3
 ===============
 - #307406 Remove debug cruft from Date Popup.
