@@ -600,7 +600,7 @@ function date_ical_escape_text($text) {
   $text = str_replace(":", "\:", $text);
   $text = str_replace(";", "\;", $text);
   $text = str_replace("\n", "\n ", $text);
-  return $text;
+  return trim($text);
 }
 
 /**
