@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #240156 Workaround conflict between Event and Date by using #process on timezone forms to override Event module handling.
 - #174580 Add rel=nofollow to back/next links.
 - #322446 Avoid extra space in date theme when there is no timezone.
 - Don't try to find repeating fields on types without fields.
