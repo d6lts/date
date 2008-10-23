@@ -57,7 +57,7 @@ function date_timezone_site_form(&$form) {
     '#type' => 'select',
     '#title' => t('Default time zone'),
     '#default_value' => $timezone,
-    '#options' => date_timezone_names(),
+    '#options' => date_timezone_names(FALSE, TRUE),  // Force an update before setting a site default.
     '#description' => t('Select the default site time zone. If in doubt, choose the timezone that is closest to your location which has the same rules for daylight saving time.'),
     '#weight' => -10,
     '#validate' => array('date_timezone_update_site' => array()),
