@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- Fix error in PHP4 dst switch date for North America.
 - Get rid of date-clear-block class in case it is affecting the sporatic problems with popups.
 - #327506 Detect and trap bad timezones in ical import so they don't create errors.
 - Fix the way 'rel=nofollow' was added to the Date browser.
