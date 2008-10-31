@@ -683,7 +683,7 @@ function theme_date_select($element) {
   $class = 'container-inline-date';
   // Add #date_float to allow date parts to float together on the same line. 
   if (empty($element['#date_float'])) {
-    $class .= ' date-clear-block';
+    $class .= ' date-clear';
   }
   if (isset($element['#children'])) {
     $output = $element['#children'];
@@ -705,7 +705,7 @@ function theme_date_text($element) {
   $class = 'container-inline-date';
   // Add #date_float to allow date parts to float together on the same line. 
   if (empty($element['#date_float'])) {
-    $class .= ' date-clear-block';
+    $class .= ' date-clear';
   }
   if (isset($element['#children'])) {
     $output = $element['#children'];
