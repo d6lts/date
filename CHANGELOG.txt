@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #326732 Fix local task to create Date repeats tab, check for valid node and add !may_cache.
 - #319452 Fix bug in PHP4 calculation of +/-1 week when using Monday as the first day of the week.
 - #319452 Make sure repeating date calculations like 'the 5th Sunday' don't prematurely jump to the following period.
 - Fix bug in PHP4 calculation of date_date_set() that was getting the day wrong.
