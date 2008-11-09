@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- Make sure repeating date UNTIL date is properly adjusted for timezone.
 - Add repeating dates to hook_content_generate().
 - #296529 Update repeating date computations to properly adjust the UNTIL date to the right time and timezone so the end date gets picked up correctly.
 - Move repeating date computations into their own function so they can be used by hook_content_generate.
