@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #322845 Make sure delta is passed to date theme so repeating dates display correctly in Views.
 - Make sure repeating date UNTIL date is properly adjusted for timezone.
 - Add repeating dates to hook_content_generate().
 - #296529 Update repeating date computations to properly adjust the UNTIL date to the right time and timezone so the end date gets picked up correctly.
