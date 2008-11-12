@@ -258,8 +258,14 @@ function _date_field_settings($op, $field) {
       return _date_views_arguments($field);
 
     case 'filters':
+      require_once('./'. drupal_get_path('module', 'date') .'/date_views.inc');
       return date_views_filters($field);
       break;
+      
+    case 'tables':
+      require_once('./'. drupal_get_path('module', 'date') .'/date_views.inc');
+      return date_views_field_tables($field);
+      break;  
   }
 }
 
