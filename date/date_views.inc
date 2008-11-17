@@ -677,6 +677,10 @@ function _date_views_query_alter(&$query, &$view) {
     }
     $view->min_date = $range[0];
     $view->max_date = $range[1];
+    if (empty($view->date_fields)) {
+      $view->date_fields = array();
+    }
+    $view->date_fields[] = $field_name;
   }
 }
 
