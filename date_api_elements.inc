@@ -492,6 +492,7 @@ function date_select_input_value($element) {
  */
 function date_text_validate($element) {
   $value = date_text_input_value($element);
+  
   // If the field is empty and not required, set it to empty and return.
   if (empty($value) && !$element['#required']) {
     form_set_value($element, NULL);
