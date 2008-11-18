@@ -361,63 +361,6 @@ function _date_views_handler_filter_date_value_form($field) {
 }
 
 /**
- * Create a default value for an exposed filter form.
- * 
- * Hacky solution, but seems to be the only way to get the
- * exposed filter to display the right values.
- */
-function _date_views_filter_value($element) {
-  if (!empty($element['#views_filter'])) {
-    $name = $element['#name'];
-    if (empty($_GET[$name])) {
-      $view = $GLOBALS['current_view'];
-      $exposed_delta = trim(str_replace('filter', '', $name));
-      $exposed_field = $view->exposed_filter[$exposed_delta]['field'];
-      foreach ((array) $view->filter as $delta => $filter) {
-        if ($filter['field'] == $exposed_field) {
-          $adjustment = $filter['options'];
-          $value = $filter['value'];
-          $op = $filter['operator'];
-        }
-      }
-      
-      // Don't inject a date value if there is no default set.
-      if (empty($value) && empty($adjustment)) {
-        return;
-      }
-      // Don't inject a date value if we're in the Views UI.
-      $current_path = explode('/', $_GET['q']);
-      if (array_pop($current_path) == 'edit') {
-        return;
-      }
-      if (!empty($adjustment)) {
-        $now = date_now();
-        date_modify($now, $adjustment);
-      }
-      else {
-        $now = date_make_date($value);
-      }
-      
-      switch ($element['#type']) {
-        case 'date_select':
-          $form_value = date_convert($now, DATE_OBJECT, DATE_ARRAY);
-          break;
-        case 'date_popup':
-          $form_value = array(
-            'date' => date_format($now, date_limit_format($element['#date_format'], array('year', 'month', 'day'))),
-            'time' => date_format($now, date_limit_format($element['#date_format'], array('hour', 'minute', 'second'))),
-            );
-          break;  
-        default:
-          $form_value = date_format($now, $element['#date_format']);   
-          break;
-      }
-      return $form_value;
-    }
-  }  
-}
-
-/**
  * Flexible date range argument handler.
  * 
  * Views values vary depending on the op:
