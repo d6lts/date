@@ -5,6 +5,10 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+
+Version 5.2.4
+===============
+
 - #309155 Get rid of all translation during date_repeat calculations, it was causing timeouts with locale module.
 - #336109 Add handling for ordinals to custom date formatting.
 - #265076, #324794 Revert attempt to use strtotime to 'guess' text input since it too often ends up silently turning into 'now'.
