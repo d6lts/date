@@ -387,7 +387,7 @@ function date_field_settings_form($field) {
   // but allow it to be a variable if needed.
   $form['timezone']['timezone_db'] = array(
     '#type' => 'hidden',
-    '#value' => 'UTC',
+    '#value' => date_get_timezone_db($field['tz_handling']),
     );
   if (module_exists('date_repeat')) {
     $form['repeat_collapsed'] = array(

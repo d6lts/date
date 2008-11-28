@@ -67,7 +67,7 @@ function _date_pathauto_node($op, $node = NULL) {
           $fieldname = $field['field_name'];
           $datefield = $node->$fieldname;
           $datevalue = $datefield[0]['value'];
-          $date = date_make_date($datevalue, 'UTC', $field['type']);
+          $date = date_make_date($datevalue, date_get_timezone_db($field['tz_handling']), $field['type']);
 
           // from date.module
           if ($field['tz_handling'] == 'none') {
