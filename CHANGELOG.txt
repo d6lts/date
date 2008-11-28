@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- Date sql handler wasn't properly setting db timezone to UTC for mysql databases.
 - #336255 Add new helper functions to make work of other modules, like Signup, easier. One helper to create a date handler for a field and another to do make date math easier.
 
 Version 5.2.4
