@@ -357,6 +357,11 @@ function date_combo_validate($element) {
   $delta = $element['#parents'][1];
   $item = $form_values[$field_name][$delta];
   
+  // If the whole field is empty and that's OK, stop now.
+  if (empty($element['#post'][$field_name]) && !$element['#required']) {
+    return;
+  }  
+  
   $field = $element['#field'];
   $delta = $element['#delta'];
   $from_field = 'value';
