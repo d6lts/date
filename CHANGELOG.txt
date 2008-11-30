@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #338237 Replace 'local_offset_field' with 'offset_field' in date handler.
 - Make sure node edit form uses the right timezone for the database and field type.
 - Fix logic error in date_convert when using timestamp with timezone other than UTC.
 - #340356 Missed removing date_timezone_convert() in one place.
