@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- Fix broken Date API test broken by change in API.
 - #340394 Fix four-digit year format for PostgreSQL.
 - Fix bug in new date_field_get_sql_handler() helper function to pick up the right timezones for the handler.
 - Date picker can't handle some year ranges that work in Date API, so adjust it as needed.
