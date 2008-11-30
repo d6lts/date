@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- Fix bug in new date_field_get_sql_handler() helper function to pick up the right timezones for the handler.
 - Date picker can't handle some year ranges that work in Date API, so adjust it as needed.
 - #338237 Replace 'local_offset_field' with 'offset_field' in date handler.
 - Make sure node edit form uses the right timezone for the database and field type.
