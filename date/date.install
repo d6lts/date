@@ -543,7 +543,7 @@ function date_update_5210() {
   $fields = content_fields();
   foreach ($fields as $field) {
     if (strstr($field['type'], 'date') && !empty($field['tz_handling']) && $field['tz_handling'] == 'none') {
-      $row = db_result(db_query("SELECT global_settings FROM {". content_field_tablename() ."} WHERE field_name='". $field['field_name'] ."'"));
+      $row = db_result(db_query("SELECT global_settings FROM {node_field} WHERE field_name='". $field['field_name'] ."'"));
       $settings = unserialize($row);
       $settings['timezone_db'] = '';
       $settings = serialize($settings);
