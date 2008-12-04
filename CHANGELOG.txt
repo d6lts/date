@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #314675 Don't try to strip labels out of select lists if the value is not an array.
 - Make sure empty time in Date Popup filter will still work.
 - Fix use of D6 table name in install file.
 - Add ability to analyze a period to period argument, like P1M--P1Y.
