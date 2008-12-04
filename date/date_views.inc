@@ -275,7 +275,7 @@ function _date_views_filter_handler($op, $filter, $filterinfo, &$query, $field_t
   }
       
   // Filter out 5.1 version values that won't work in 5.2.
-  if (!preg_match(DATE_REGEX_LOOSE, $value)) {
+  if ($filterinfo['type'] == 'DATE' && !preg_match(DATE_REGEX_LOOSE, $value)) {
     $value = '';
   }
   if (empty($value) && empty($filter['options'])) {
