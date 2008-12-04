@@ -5,6 +5,10 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+Version 5.2.5
+===============
+
+- Fix background colors in Date Popup.
 - #273730 Don't use REGEX_LOOSE on YEAR, MONTH, or DAY filters.
 - #314675 Don't try to strip labels out of select lists if the value is not an array.
 - Make sure empty time in Date Popup filter will still work.
