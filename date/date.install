@@ -547,7 +547,7 @@ function date_update_5210() {
       $settings = unserialize($row);
       $settings['timezone_db'] = '';
       $settings = serialize($settings);
-      db_query("UPDATE {". content_field_tablename() ."} SET global_settings='%s' WHERE field_name='%s'", $settings, $field['field_name']);
+      db_query("UPDATE {node_field} SET global_settings='%s' WHERE field_name='%s'", $settings, $field['field_name']);
     }    
   }
   drupal_set_message(t("The database has been updated to correct the stored timezone for fields using timezone 'none'."));
