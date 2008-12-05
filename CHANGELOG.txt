@@ -5,6 +5,9 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #307166 Make sure timestamps with missing granularity parts in select widgets get defaulted to empty values and saved correctly.
+
+
 Version 5.2.5
 ===============
 

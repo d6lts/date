@@ -211,7 +211,8 @@ function date_select_process(&$element, $edit = NULL) {
     if ($field != 'timezone') {
       $element[$field] = array(
         '#type' => 'hidden',
-        '#value' => is_object($date) ? intval(date_format($date, $formats[$field])) : 0);
+        '#value' => 0,
+        );
     }
   }
   
