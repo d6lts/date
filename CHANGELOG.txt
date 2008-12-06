@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #343190 Add validity testing to date_api_ical_build_rrule().
 - #307166 Make sure timestamps with missing granularity parts in select widgets get defaulted to empty values and saved correctly.
 
 
