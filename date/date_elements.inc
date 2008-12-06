@@ -122,6 +122,7 @@ function _date_widget($op, &$node, $field, &$items) {
 
     case 'form':
       require_once('./'. drupal_get_path('module', 'date_api') .'/date_api_elements.inc');
+      
       $db_info = content_database_info($field);
       $columns = $db_info['columns'];
       if (isset($columns['rrule'])) {
