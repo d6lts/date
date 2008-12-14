@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #345862 Fix missing close comment tag in datepicker css.
 - Get rid of DURATION time part details in iCal array, we only need the DATA and DURATION.
 - #282521 Do more work on LOCATION to split out UID and handle odd upcoming.org location identifiers.
 - Add more error trapping to ical parser.
