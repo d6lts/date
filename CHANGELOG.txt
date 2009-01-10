@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #346752 Add RTL css code.
 - #324290 Don't validate when $items is empty.
 - #313704 Make sure date db timezone does not get removed before token handling.
 - #345862 Fix missing close comment tag in datepicker css.
