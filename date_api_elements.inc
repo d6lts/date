@@ -397,7 +397,6 @@ function date_increment_round(&$date, $increment) {
  *  Validation function for date selector.
  */
 function date_select_validate($element) {
-  
   if (is_array($element['#value'])) {
     // Strip field labels out of the results.
     foreach ($element['#value'] as $field => $field_value) {
