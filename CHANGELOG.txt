@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- Date Popup should handle empty time better.
 - #310633 Rework 'all day' logic to correctly handle increments.
 - #346804 Don't use D6 function in D5 version!
 - #324290 Don't validate when $items is empty.
