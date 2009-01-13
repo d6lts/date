@@ -120,7 +120,7 @@ function date_timezone_update_site($element) {
   }
   else {
     variable_set('date_default_timezone_name', $timezone);
-    $date = date_make_date('now', $timezone);
+    $date = date_now($timezone);
     $offset = date_offset_get($date);
   }
   
@@ -144,7 +144,7 @@ function date_timezone_update_site($element) {
 function date_timezone_update_user($element) {
   $timezone = $element['timezone_name']['#value'];
   if (!empty($timezone)) {
-    $date = date_make_date('now', $timezone);
+    $date = date_now($timezone);
     $offset = date_offset_get($date);
   }
   else {
