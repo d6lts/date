@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- Make the PHP4 code forgiving enough to accept '+ 1 month' instead of '+1 month'.
 - #292942 Only load timezone js file in timezone forms.
 - Fix broken handling of some partial (year or month and year) dates and pave the way for fuzzy granularity by adjusting date_is_valid() and date_make_date() to better handle partial dates.
 - #347080 Fix PHP4 southern timezone computation and New Zealand region.
