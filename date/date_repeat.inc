@@ -152,7 +152,6 @@ function date_repeat_build_dates($rrule = NULL, $values = NULL, $field, $item) {
     
   // Split the RRULE into RRULE and EXDATE parts.
   $parts = date_repeat_split_rrule($rrule);
-  $rule = explode("\n", $rrule);
   $parsed_exceptions = (array) $parts[1];
   $exceptions = array();
   foreach ($parsed_exceptions as $exception) {
