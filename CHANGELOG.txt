@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #347090 Fix southern hemisphere timezone adjustment for PHP4.
 - Fix bug that caused date_select to end up as current date.
 - #313369 Repeating date with exceptions created error when exceptions data is appended.
 - Fix bad PHP4 regex that caused endless looping in calendar and broken logic elsewhere.
