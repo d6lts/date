@@ -5,6 +5,8 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- Improve interpretation of argument date ranges.
+- Improve handling of translation for Date repeat rules.
 - #375551 The 'All day' formatting should not be applied to format_interval formats.
 - Date PHP4: fix inconsistency in offset computation for first two hours of the day dst changes.
 - Date PHP4: eliminate some needless cycles to improve performance.
