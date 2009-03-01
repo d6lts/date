@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #375864 Make sure date_limit_format() doesn't keep formats that are only escaped strings.
 - Improve interpretation of argument date ranges.
 - Improve handling of translation for Date repeat rules.
 - #375551 The 'All day' formatting should not be applied to format_interval formats.
