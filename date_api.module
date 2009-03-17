@@ -836,9 +836,9 @@ function date_difference($date1_in, $date2_in, $measure = 'seconds', $type = DAT
       case 'seconds':
         return $diff;
       case 'minutes':
-        return $diff * 60;
+        return $diff / 60;
       case 'hours':
-        return $diff * 24 * 60;
+        return $diff / 3600;
       case 'years':
         return $year_diff;
 
