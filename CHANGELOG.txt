@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #398258 Fix problems handling blank text widget values and general form processing cleanup.
 - #397420 Fix miscalculation errors in date_difference.
 - #375864 Make sure date_limit_format() doesn't keep formats that are only escaped strings.
 - Improve interpretation of argument date ranges.
