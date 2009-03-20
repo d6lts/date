@@ -441,7 +441,12 @@ function date_combo_validate($element) {
     }
  
     $from_date = date_input_value($field, $element[$from_field]);
-    $to_date = date_input_value($field, $element[$to_field]);
+    if (!empty($field['todate'])) {
+      $to_date = date_input_value($field, $element[$to_field]);
+    }
+    else {
+      $to_date = $from_date;
+    }
         
     if (!empty($field['todate']) && $from_date > $to_date) {     
       $error_field = implode('][', $element['#parents']) .'][value2]['. array_shift(array_keys($merged_date));
