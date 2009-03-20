@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #408176 Fix token handling of empty values.
 - #354989 Make sure year-only date does not regress to YYYY-00-00 00:00:00, which will end up as previous year.
 - #398258 Fix problems handling blank text widget values and general form processing cleanup.
 - #397420 Fix miscalculation errors in date_difference.
