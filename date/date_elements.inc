@@ -280,6 +280,10 @@ function _date_elements() {
  * Process an individual date element.
  */
 function date_combo_process($element, $edit = NULL) {
+  if (isset($element['#access']) && empty($element['#access'])) {
+    return;
+  }
+
   $field = $element['#field'];
   $delta = $element['#delta'];
   $from_field = $element['#columns'][0];
