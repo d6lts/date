@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #414290 Update timezone form_alter to account for difference between Event version 1 and 2.
 - #400992 Add time and datetime tokens.
 - #408176 Fix token handling of empty values.
 - #354989 Make sure year-only date does not regress to YYYY-00-00 00:00:00, which will end up as previous year.
