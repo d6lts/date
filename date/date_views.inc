@@ -423,7 +423,7 @@ function _date_views_argument_filter(&$query, $argtype, $arg, $field_type) {
   }
   else {
     $query->add_where($date_handler->sql_where_date('DATE', $sql_field, ">=", date_format($range[0], DATE_FORMAT_DATETIME)));
-    $query->add_where($date_handler->sql_where_date('DATE', $sql_field, "<=", date_format($range[1], DATE_FORMAT_DATETIME)));
+    $query->add_where($date_handler->sql_where_date('DATE', $sql_field, "<", date_format($range[1], DATE_FORMAT_DATETIME)));
   }
 }
 
