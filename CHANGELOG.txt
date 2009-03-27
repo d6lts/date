@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #317105 Update Isreal DST rules.
 - #342423 Add 'date_popup' class to Date popup for jQuery targetting.
 - #368305 Date browser week view was cutting off one second too late.
 - #380754 Grouped date handler needs 'AND' when it has a $where clause.
