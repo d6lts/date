@@ -250,7 +250,7 @@ function date_popup_process_date(&$element, $edit = NULL, $date = NULL) {
   $sub_element = array(
     '#type' => 'textfield',
     '#default_value' => (!empty($element['#value']['date']) || !empty($edit['date'])) && is_object($date) ? date_format($date, $date_format) : '',
-    '#attributes' => array('class' => $class),
+    '#attributes' => array('class' => 'date_popup '. $class),
     '#size' => !empty($element['#size']) ? $element['#size'] : 20,
     '#maxlength' => !empty($element['#maxlength']) ? $element['#maxlength'] : 30,
     );
