@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #314959 Make sure non-requested date fields are not displayed.
 - #317105 Update Isreal DST rules.
 - #342423 Add 'date_popup' class to Date popup for jQuery targetting.
 - #368305 Date browser week view was cutting off one second too late.
