@@ -60,8 +60,9 @@ function date_views_field_handler_group($field_info, $field_data, $value, $data,
       $replace = date_api_views_query_substitutions($view);
       $sql1 = $date_handler->sql_where_date('DATE', $sql_field, ">=", date_format($view->min_date, DATE_FORMAT_DATETIME));
       $sql2 = $date_handler->sql_where_date('DATE', $sql_field, "<=", date_format($view->max_date, DATE_FORMAT_DATETIME));
-      $where = strtr($sql1, $replace) .' AND '. strtr($sql2, $replace);
+      $where = ' AND '. strtr($sql1, $replace) .' AND '. strtr($sql2, $replace);
     }
+    
     // Note : this query doesn't need to run through db_rewrite_sql, since the
     // nids we retrieve have been selected by the views query, which already takes
     // care of this.
