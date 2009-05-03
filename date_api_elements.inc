@@ -527,7 +527,7 @@ function date_text_input_value($element) {
   if (!$element['#required'] && trim($input) == '') return NULL;
   
   $value = date_convert_from_custom($input, $element['#date_format']);
-  $value = date_limit_value($date, $granularity);
+  $value = date_limit_value($value, $granularity);
   
   // If it creates a valid date, use it.
   if (date_is_valid($value, DATE_DATETIME, $granularity)) {
