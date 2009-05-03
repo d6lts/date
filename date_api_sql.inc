@@ -335,6 +335,7 @@ class date_sql_handler {
           'H' => 'HH24',
           'i' => 'MI',
           's' => 'SS',
+          '\T' => '"T"',
           );
         $format = strtr($format, $replace);
         return "TO_CHAR($field, '$format')";
