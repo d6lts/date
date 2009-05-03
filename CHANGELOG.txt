@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #418206 All date elements should be in datetime format when processing elements.
 - #375864 Clean up date_limit_format() to handle more odd formats.
 - #338253 Fixes to translation of timezone names.
 - #409476 Make sure empty UNTIL date is not parsed into RRULE.
