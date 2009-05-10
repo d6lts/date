@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #315443 Make sure 'within' labels don't break when used in text fields.
 - #381370 Remove escaping for colon and double quote per ical spec.
 - #456460 Break out simple themes for date_display_single and date_display_double for easier control by themers of separator and other html.
 - #384258 Fix broken handling of 24 hour time in Date Popup.
