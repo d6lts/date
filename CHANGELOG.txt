@@ -5,6 +5,7 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+- #384258 Fix broken handling of 24 hour time in Date Popup.
 - #401152 Fix broken handling of long month name in input format.
 
 Version 5.2.7
