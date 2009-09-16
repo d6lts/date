@@ -5,6 +5,9 @@ Date Module 5.2
 Version 5.2-dev
 =================
 
+
+Version 5.2.8
+===============
 - #418174 Timestamp format should not be run through date_limit_format().
 - #473308 Add handling for year-only date stored in timestamp field.
 - Fix date_limit_format() to be sure the 'T' is stripped out of ISO dates with only date or only time.
