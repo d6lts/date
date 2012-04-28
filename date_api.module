@@ -1504,7 +1504,7 @@ function date_is_valid($date, $type = DATE_DATETIME, $granularity = array('year'
       return FALSE;
     }
   }
-  elseif (!date_valid_year($year) || !date_valid_month($month) || date_valid_day($day, $month, $year)) {
+  elseif (!date_valid_year($year) || !date_valid_month($month) || !date_valid_day($day, $month, $year)) {
     // Unix and datetime are expected to have at least a year, month, and day.
     return FALSE;
   }

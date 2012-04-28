@@ -4,6 +4,7 @@ Date Module 6.x
 Version 6.2.x-dev
 =============
 
+- Issue #501416 by refman1073: Fixed Date validation incorrect for days > 31.
 
 Version 6.2.8
 =============
