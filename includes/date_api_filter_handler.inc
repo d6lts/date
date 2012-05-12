@@ -444,7 +444,7 @@ class date_api_filter_handler extends views_handler_filter_numeric {
         $field = $query_field['field'];
         if (!isset($this->query->table_queue[$field['table_name']])) {
           if ($field['table_name'] != $this->table || !empty($this->relationship)) {
-            $this->related_table_alias = $this->query->queue_table($field['table_name'], $this->relationship);
+            $this->related_table_alias = $this->query->ensure_table($field['table_name'], $this->relationship);
           }
         }
         $table_alias = !empty($this->related_table_alias) ? $this->related_table_alias : $field['table_name'];
