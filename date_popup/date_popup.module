@@ -327,7 +327,7 @@ function date_popup_process_date(&$element, $edit = NULL, $date = NULL) {
   $parents = array_merge($element['#parents'], array('date'));
   $sub_element = array(
     '#type' => 'textfield',
-    '#default_value' => (!empty($element['#value']['date']) || !empty($edit['date'])) && is_object($date) ? date_format_date($date, 'custom', $date_format) : '',
+    '#default_value' => (!empty($element['#value']) || !empty($edit['date'])) && is_object($date) ? date_format_date($date, 'custom', $date_format) : '',
     '#id' => $id,
     '#input' => FALSE,
     '#size' => !empty($element['#size']) ? $element['#size'] : 20,
@@ -369,7 +369,7 @@ function date_popup_process_time(&$element, $edit = NULL, $date = NULL) {
   $parents = array_merge($element['#parents'], array('time'));
   $sub_element = array(
     '#type' => 'textfield',
-    '#default_value' => (!empty($element['#value']['time']) || !empty($edit['time'])) && is_object($date) ? date_format_date($date, 'custom', $time_format) : '',
+    '#default_value' => (!empty($element['#value']) || !empty($edit['time'])) && is_object($date) ? date_format_date($date, 'custom', $time_format) : '',
     '#id' => $id,
     '#input' => FALSE,
     '#size' => 10,
