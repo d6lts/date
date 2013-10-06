@@ -644,7 +644,7 @@ function date_ical_escape_text($text) {
   $text = preg_replace("/\\\b/", "\\\\", $text);
   $text = str_replace(",", "\,", $text);
   $text = str_replace(";", "\;", $text);
-  $text = str_replace("\n", "\\n ", $text);
+  $text = str_replace("\n", "\\n\r\n ", $text);
   return trim($text);
 }
 
