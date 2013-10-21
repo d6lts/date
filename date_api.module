@@ -699,7 +699,7 @@ function date_t_strings(&$replace, $langcode) {
  *
  * Translates formatted date results, unlike PHP function date_format().
  *
- * @param $oject
+ * @param $date
  *   A date object, could be created by date_make_date().
  * @param $type
  *   The format to use. Can be "small", "medium" or "large" for the preconfigured
