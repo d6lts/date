@@ -4,11 +4,24 @@ Date Module 6.x
 Version 6.2.x-dev
 =============
 
-- Issue #1289270 by pdrake: Fixed date arguments and filters do not work with relationships.
-- Issue #973924 by arlinsandbulte: Fixed jquery_ui() dependency not in .info file.
-- Issue #895760 by Reinette: Added RFC2447 option 'STATUS' to date_api_ical().inc.
-- Issue #1192020 by tim.plunkett: Fixed Date granularity is too fragile in date_field_all_day().
-- Issue #501416 by refman1073: Fixed Date validation incorrect for days > 31.
+Version 6.2.10
+==============
+
+-  Issue #1528474 by pfrenssen, tim.plunkett: Fixed Call to undefined function jquery_ui_get_path().
+-  Issue #1558368 by jandd: Fixed ()['UNTIL'] must be ()['UNTIL'] in date_repeat().inc.
+-  Issue #1559962 by pillarsdotnet: Fixed Correct documentation of date_format_date() parameter: "$oject" -> "$date".
+-  Issue #1214422 by IRuslan: Fixed PHP warning - undefined index in array.
+-  Issue #1138210 by coltrane, djdevin: Fixed date_sql_handler() STR_TO_DATE math incorrect.
+-  Issue #1131916 by hefox | vectoroc: Fixed date_timezone_init() attempts to access undefined variable.
+-  Issue #636208 Date range: Expose a single filter to select events that start before the chosen date and end after the chosen date by anrikun.
+-  Issue #1176548 Fold long lines in iCal by sdague.
+-  Issue #1808414 Date showing on node view - not showing on node edit - PHP 5.4 issue by bkat and mikeytown2.
+-  Issue #1289270 by pdrake: Fixed date arguments and filters do not work with relationships.
+-  Issue #973924 by arlinsandbulte: Fixed jquery_ui() dependency not in .info file.
+-  Issue #895760 by Reinette: Added RFC2447 option STATUS to date_api_ical().inc.
+-  Issue #1192020 by tim.plunkett: Fixed Date granularity is too fragile in date_field_all_day().
+-  Issue #501416 by refman1073: Fixed Date validation incorrect for days > 31.
+-  Prepare for continueing develpment on 6.x-2.x branch
 
 Version 6.2.9
 =============
