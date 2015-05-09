@@ -600,7 +600,12 @@ class date_api_filter_handler extends views_handler_filter_numeric {
   }
 
   function get_query_fields() {
-    $fields = date_api_fields($this->definition['base']);
+    if (!empty($this->definition['base'])) {
+      $fields = date_api_fields($this->definition['base']);
+    }
+    else {
+      $fields = date_api_fields($this->view->base_table);
+    }
     $fields = $fields['name'];
     $this->query_fields = array();
     foreach ((array) $this->options['date_fields'] as $delta => $name) {
