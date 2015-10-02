@@ -74,7 +74,7 @@ function date_field_widget_form(&$form, &$form_state, $field, $instance, $langco
   // The repeating values will be re-generated when the repeat widget form is validated.
   // At this point we can't tell if this form element is going to be hidden by #access, and we're going to
   // lose all but the first value by doing this, so store the original values in case we need to replace them later.
-  if (!empty($field['settings']['repeat'])) {
+  if (!empty($field['settings']['repeat']) && module_exists('date_repeat_field')) {
     if ($delta == 0) {
       $form['#after_build'][] = 'date_repeat_after_build';
       $form_state['storage']['repeat_fields'][$field_name] = array_merge($form['#parents'], array($field_name));
