@@ -394,6 +394,10 @@ function date_popup_process_date_part(&$element) {
     'fromTo' => isset($fromto),
   );
 
+  if (!empty($element['#instance'])) {
+    $settings['syncEndDate'] = $element['#instance']['settings']['default_value2'] == 'sync';
+  }
+
   // Create a unique id for each set of custom settings.
   $id = date_popup_js_settings_id($element['#id'], 'datepicker', $settings);
 
@@ -799,6 +803,14 @@ function theme_date_popup($vars) {
     $element['#children'] = '<div id="' . $element['#id'] . '" ' . drupal_attributes($wrapper_attributes) . '>' . $element['#children'] . '</div>';
   }
   return '<div ' . drupal_attributes($attributes) . '>' . theme('form_element', $element) . '</div>';
+}
+
+/**
+ * Implements hook_date_field_instance_settings_form_alter().
+ */
+function date_popup_date_field_instance_settings_form_alter(&$form, $context) {
+  // Add an extra option to sync the end date with the start date.
+  $form['default_value2']['#options']['sync'] = t('Sync with start date');
 }
 
 /**
