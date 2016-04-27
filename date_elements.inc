@@ -474,6 +474,12 @@ function date_combo_validate($element, &$form_state) {
   $form_values = drupal_array_get_nested_value($form_state['values'], $element['#field_parents']);
   $form_input = drupal_array_get_nested_value($form_state['input'], $element['#field_parents']);
 
+  // Programmatically calling drupal_submit_form() does not always add the date
+  // combo to $form_state['input'].
+  if (empty($form_input[$field_name]) && !empty($form_values[$field_name])) {
+    form_set_value($element, $element['#date_items'], $form_state);
+    return;
+  }
   // If the whole field is empty and that's OK, stop now.
   if (empty($form_input[$field_name]) && !$element['#required']) {
     return;
