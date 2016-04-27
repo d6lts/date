@@ -125,6 +125,14 @@ function date_interval_formatter_settings_form($field, $instance, $view_mode, $f
     '#default_value' => $settings['interval_display'],
     '#weight' => 0,
   );
+  if (!empty($field['settings']['todate'])) {
+    $form['use_end_date'] = array(
+      '#title' => t('Use End date'),
+      '#description' => 'Use the End date, instead of the start date',
+      '#type' => 'checkbox',
+      '#default_value' => $settings['use_end_date'],
+    );
+  }
   return $form;
 }
 
@@ -195,7 +203,9 @@ function date_interval_formatter_settings_summary($field, $instance, $view_mode)
   $display = $instance['display'][$view_mode];
   $settings = $display['settings'];
   $formatter = $display['type'];
-  $summary[] = t('Display time ago, showing @interval units.', array('@interval' => $settings['interval']));
+  $field = ($settings['use_end_date'] == 1) ? 'End' : 'Start';
+  $summary[] = t('Display time ago, showing @interval units. Using @field Date',
+      array('@interval' => $settings['interval'], '@field' => $field));
 
   return $summary;
 }

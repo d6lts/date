@@ -28,6 +28,7 @@ function date_field_formatter_info() {
       'settings' => array(
         'interval' => 2,
         'interval_display' => 'time ago',
+        'use_end_date' => false,
       ),
     ),
     'date_plain' => array(

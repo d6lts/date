@@ -378,6 +378,8 @@ function theme_date_display_interval($variables) {
     'end_date' => $dates['value2']['local']['object'],
     'interval' => $options['interval'],
     'interval_display' => $options['interval_display'],
+    'use_end_date' => !empty($options['use_end_date']) ?
+      $options['use_end_date'] : FALSE,
   );
 
   if ($return = theme('date_time_ago', $time_ago_vars)) {
