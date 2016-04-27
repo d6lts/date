@@ -111,7 +111,7 @@ function date_default_date($element) {
   $format = DATE_FORMAT_DATETIME;
 
   // The text and popup widgets might return less than a full datetime string.
-  if (strlen($element['#default_value']) < 19) {
+  if (is_string($element['#default_value']) && strlen($element['#default_value']) < 19) {
     switch (strlen($element['#default_value'])) {
       case 16:
         $format = 'Y-m-d H:i';

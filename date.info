@@ -13,3 +13,4 @@ files[] = tests/date_validation.test
 files[] = tests/date_timezone.test
 files[] = tests/date_views_pager.test
 files[] = tests/date_views_popup.test
+files[] = tests/date_form.test
