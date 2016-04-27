@@ -282,7 +282,7 @@ function _date_field_instance_settings_form($field, $instance) {
 /**
  * Form validation handler for _date_field_instance_settings_form().
  */
-function date_field_instance_settings_form_validate(&$form, &$form_state) {
+function _date_field_instance_settings_form_validate(&$form, &$form_state) {
   $settings = $form_state['values']['instance']['settings'];
 
   if ($settings['default_value'] == 'strtotime') {
@@ -468,7 +468,7 @@ function _date_field_widget_settings_form($field, $instance) {
 /**
  * Form validation handler for _date_field_widget_settings_form().
  */
-function date_field_widget_settings_form_validate(&$form, &$form_state) {
+function _date_field_widget_settings_form_validate(&$form, &$form_state) {
   // The widget settings are in the wrong place in the form because of #tree on
   // the top level.
   $settings = $form_state['values']['instance']['widget']['settings'];
@@ -603,7 +603,7 @@ function _date_field_settings_form($field, $instance, $has_data) {
 /**
  * Form validation handler for _date_field_settings_form().
  */
-function date_field_settings_validate(&$form, &$form_state) {
+function _date_field_settings_validate(&$form, &$form_state) {
   $field = &$form_state['values']['field'];
 
   if ($field['settings']['tz_handling'] == 'none') {

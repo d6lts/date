@@ -463,6 +463,14 @@ function date_field_instance_settings_form($field, $instance) {
 }
 
 /**
+ * Form validation handler for _date_field_instance_settings_form().
+ */
+function date_field_instance_settings_form_validate(&$form, &$form_state) {
+  module_load_include('inc', 'date', 'date_admin');
+  return _date_field_instance_settings_form_validate($form, $form_state);
+}
+
+/**
  * Implements hook_field_widget_settings_form().
  */
 function date_field_widget_settings_form($field, $instance) {
@@ -471,11 +479,27 @@ function date_field_widget_settings_form($field, $instance) {
 }
 
 /**
+ * Form validation handler for _date_field_widget_settings_form().
+ */
+function date_field_widget_settings_form_validate(&$form, &$form_state) {
+  module_load_include('inc', 'date', 'date_admin');
+  return _date_field_widget_settings_form_validate($form, $form_state);
+}
+
+/**
  * Implements hook_field_settings_form().
  */
 function date_field_settings_form($field, $instance, $has_data) {
   module_load_include('inc', 'date', 'date_admin');
   return _date_field_settings_form($field, $instance, $has_data);
+}
+
+/**
+ * Form validation handler for _date_field_settings_form().
+ */
+function date_field_settings_validate(&$form, &$form_state) {
+  module_load_include('inc', 'date', 'date_admin');
+  return _date_field_settings_validate($form, $form_state);
 }
 
 /**
