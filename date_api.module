@@ -933,7 +933,8 @@ function date_default_timezone($check_user = TRUE) {
 function date_days_in_month($year, $month) {
   // Pick a day in the middle of the month to avoid timezone shifts.
   $datetime = date_pad($year, 4) .'-'. date_pad($month) .'-15 00:00:00';
-  $date = date_make_date($datetime);
+  // Just number of days calculation. No need to worry about timezone.
+  $date = date_create($datetime);
   return date_format($date, 't');
 }
 
@@ -1590,7 +1591,8 @@ function date_has_date($granularity) {
  *   invalid for that date type).
  */
 function date_limit_value($date, $granularity, $type = DATE_DATETIME) {
-  if (!date_is_valid($date, $type, $granularity) || !$nongranularity = date_nongranularity($granularity)) {
+  $nongranularity = date_nongranularity($granularity);
+  if (date_is_valid($date, $type, $granularity) && !$nongranularity) {
     return $date;
   }
   else {
