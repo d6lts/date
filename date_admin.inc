@@ -14,13 +14,22 @@ function date_default_formatter_settings_form($field, $instance, $view_mode, $fo
   $formatter = $display['type'];
   $form = array();
 
+  $date_formats = date_format_type_options();
   $form['format_type'] = array(
     '#title' => t('Choose how users view dates and times:'),
     '#type' => 'select',
-    '#options' => date_format_type_options(),
+    '#options' => $date_formats + array('custom' => t('Custom')),
     '#default_value' => $settings['format_type'],
     '#description' => t('To add or edit options, visit <a href="@date-time-page">Date and time settings</a>.', array('@date-time-page' => url('admin/config/regional/date-time'))),
     '#weight' => 0,
+  );
+
+  $form['custom_date_format'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Custom date format'),
+    '#description' => t('If "Custom", see the <a href="@url" target="_blank">PHP manual</a> for date formats. Otherwise, enter the number of different time units to display, which defaults to 2.', array('@url' => 'http://php.net/manual/function.date.php')),
+    '#default_value' => isset($settings['custom_date_format']) ? $settings['custom_date_format'] : '',
+    '#dependency' => array('edit-options-settings-format-type' => array('custom')),
   );
 
   $form['fromto'] = array(
