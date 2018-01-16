@@ -2,6 +2,9 @@ Date 7.x-2.x-dev, xxxx-xx-xx
 ----------------------------
 #2937071 by DamienMcKenna: Tidy up the CHANGELOG.txt file.
 #2514146 by ram4nd: Remove the .gitignore file.
+#2533080 by jribeiro, DamienMcKenna, rajeev_drupal, badjava: 'clone' is a
+  reserved keyword introduced in PHP version 5.0 and cannot be invoked as a
+  function.
 
 
 Date 7.x-2.10, 2017-04-07
