@@ -5,6 +5,10 @@ Date 7.x-2.x-dev, xxxx-xx-xx
 #2533080 by jribeiro, DamienMcKenna, rajeev_drupal, badjava: 'clone' is a
   reserved keyword introduced in PHP version 5.0 and cannot be invoked as a
   function.
+#2843367 by RemyAroundTown, alesr, joelpittet, DamienMcKenna, oadaeh,
+  ikeigenwijs, johnzzon, Novitsh, matthiasm11, glynster, robertgarrigos,
+  dchatry, szeidler, Majdi, Plazik, NancyDru, nanobyt3: String Offset errors on
+  edit page using PHP 7.1.0.
 
 
 Date 7.x-2.10, 2017-04-07
