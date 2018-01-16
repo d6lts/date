@@ -9,6 +9,7 @@ Date 7.x-2.x-dev, xxxx-xx-xx
   ikeigenwijs, johnzzon, Novitsh, matthiasm11, glynster, robertgarrigos,
   dchatry, szeidler, Majdi, Plazik, NancyDru, nanobyt3: String Offset errors on
   edit page using PHP 7.1.0.
+#2889636 by MustangGB, ikeigenwijs, Stevel: Fix PHP 7 tests.
 
 
 Date 7.x-2.10, 2017-04-07
