@@ -7,6 +7,8 @@ Version 6.2.x-dev
   Undefined index: base in get_query_fields().
 #2247891 by haggins, vijaycs85, herved: Submitting date fields returns error
   "Field X is invalid".
+#2071669 by freblasty: Incorrect date validation for year or year and month
+  formats.
 
 
 Version 6.2.10

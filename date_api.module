@@ -1480,9 +1480,9 @@ function date_is_valid($date, $type = DATE_DATETIME, $granularity = array('year'
 
   // If this is an incomplete date (year only or year and month only),
   // need special handling, partial dates can have empty date parts.
-  $max_granularity = $granularity;
-  $max_granularity = array_pop($max_granularity);
-  if (!in_array($max_granularity, array('year', 'month'))) {
+  $granularity_sorted = date_granularity_sorted($granularity);
+  $max_granularity = end($granularity_sorted);
+  if (in_array($max_granularity, array('year', 'month'))) {
     if (in_array('year', $granularity) && !date_valid_year($year)) {
       return FALSE;
     }
