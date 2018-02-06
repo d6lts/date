@@ -3,6 +3,11 @@ Date Module 6.x
 
 Version 6.2.x-dev
 =============
+#1411472 by pdrake, dagmar, jonathan1055, NROTC_Webmaster, brad.bulger:
+  Undefined index: base in get_query_fields().
+#2247891 by haggins, vijaycs85, herved: Submitting date fields returns error
+  "Field X is invalid".
+
 
 Version 6.2.10
 ==============
