@@ -346,6 +346,10 @@ class date_views_plugin_pager extends views_plugin_pager {
     return FALSE;
   }
 
+  function pre_render(&$result) {
+    // Load theme functions for the pager.
+    module_load_include('inc', 'date_views', 'theme/theme');
+  }
 
   function render($input) {
     // This adds all of our template suggestions based upon the view name and display id.
