@@ -311,7 +311,7 @@ class DateObject extends DateTime {
    * @return object
    *   A merged date object.
    */
-  public function merge(FeedsDateTime $other) {
+  public function merge(DateObject $other) {
     $other_tz = $other->getTimezone();
     $this_tz = $this->getTimezone();
     // Figure out which timezone to use for combination.

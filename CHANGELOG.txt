@@ -16,6 +16,8 @@ Date 7.x-2.x-dev, xxxx-xx-xx
 #2449261 by daniel_j, pcho, joseph.olstad, David Hernández, collinhaines,
   vinmassaro, SkyNet Costa Rica: expects an array, not a scalar - Fatal error:
   Cannot create references to/from string offsets.
+#1741062 by kim.pepper: The merge method of DateObject class has a wrong
+  parameter type.
 
 
 Date 7.x-2.10, 2017-04-07
