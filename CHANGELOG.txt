@@ -13,6 +13,9 @@ Date 7.x-2.x-dev, xxxx-xx-xx
 #2995679 by Liam Morland, joseph.olstad: PHP 7.1 no longer converts string to
   arrays the first time a value is assigned with square bracket notation.
 #2889759 by ladybug_3777: Exposed Date Filter - PHP 7 Error.
+#2449261 by daniel_j, pcho, joseph.olstad, David Hernández, collinhaines,
+  vinmassaro, SkyNet Costa Rica: expects an array, not a scalar - Fatal error:
+  Cannot create references to/from string offsets.
 
 
 Date 7.x-2.10, 2017-04-07
