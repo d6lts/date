@@ -22,6 +22,8 @@ Date 7.x-2.x-dev, xxxx-xx-xx
   5.3 - Date field being flagged as Invalid date not actually invalid.
 #2902829 by JayKandari, tucho, nileshlohar, matthiasm11, mr.york, kmonty:
   Formatter settings for Custom date type is not getting saved.
+#2208769 by Cracu, bunthorne, jeni_dc, Proteo, Reis Quarteu, echoz: Theme hook
+  not found while managing date field.
 
 
 Date 7.x-2.10, 2017-04-07
