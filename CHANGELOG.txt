@@ -10,6 +10,8 @@ Date 7.x-2.x-dev, xxxx-xx-xx
   dchatry, szeidler, Majdi, Plazik, NancyDru, nanobyt3: String Offset errors on
   edit page using PHP 7.1.0.
 #2889636 by MustangGB, ikeigenwijs, Stevel: Fix PHP 7 tests.
+#2995679 by Liam Morland, joseph.olstad: PHP 7.1 no longer converts string to
+  arrays the first time a value is assigned with square bracket notation.
 
 
 Date 7.x-2.10, 2017-04-07
