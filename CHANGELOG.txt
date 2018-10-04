@@ -20,6 +20,8 @@ Date 7.x-2.x-dev, xxxx-xx-xx
   parameter type.
 #2873415 by Squee3P0, jcisio, rujinxero, digitaltodd, fdverwoerd, Stray14: PHP
   5.3 - Date field being flagged as Invalid date not actually invalid.
+#2902829 by JayKandari, tucho, nileshlohar, matthiasm11, mr.york, kmonty:
+  Formatter settings for Custom date type is not getting saved.
 
 
 Date 7.x-2.10, 2017-04-07

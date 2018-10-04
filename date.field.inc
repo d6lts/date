@@ -15,10 +15,11 @@ function date_field_formatter_info() {
       'field types' => array('date', 'datestamp', 'datetime'),
       'settings' => array(
         'format_type' => 'long',
+        'custom_date_format' => '',
+        'fromto' => 'both',
         'multiple_number' => '',
         'multiple_from' => '',
         'multiple_to' => '',
-        'fromto' => 'both',
         'show_remaining_days' => FALSE,
       ),
     ),
