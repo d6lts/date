@@ -25,6 +25,8 @@ Date 7.x-2.x-dev, xxxx-xx-xx
 #2208769 by Cracu, bunthorne, jeni_dc, Proteo, Reis Quarteu, echoz: Theme hook
   not found while managing date field.
 #3002449 by plach: Timezone rendered when theming date formats without time.
+#2843660 by Zeddix, DamienMcKenna, capysara, gerson.analista: Add granularity
+  to date_views sort handler.
 
 
 Date 7.x-2.10, 2017-04-07
