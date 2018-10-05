@@ -177,7 +177,7 @@ function theme_date_display_combination($variables) {
   elseif ($date1 == $date2 || empty($date2)) {
     $output .= theme('date_display_single', array(
       'date' => $date1,
-      'timezone' => $timezone,
+      'timezone' => $has_time_string ? $timezone : '',
       'attributes' => $attributes,
       'rdf_mapping' => $rdf_mapping,
       'add_rdf' => $add_rdf,
@@ -221,7 +221,7 @@ function theme_date_display_combination($variables) {
     $output .= theme('date_display_range', array(
       'date1' => $date1,
       'date2' => $date2,
-      'timezone' => $timezone,
+      'timezone' => $has_time_string ? $timezone : '',
       'attributes' => $attributes,
       'rdf_mapping' => $rdf_mapping,
       'add_rdf' => $add_rdf,
