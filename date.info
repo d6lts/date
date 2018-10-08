@@ -5,6 +5,11 @@ package = Date/Time
 core = 7.x
 php = 5.2
 files[] = date.migrate.inc
+
+; Dependencies for test coverage.
+test_dependencies[] = entity:entity
+
+; Test coverage.
 files[] = tests/date_api.test
 files[] = tests/date.test
 files[] = tests/date_field.test
