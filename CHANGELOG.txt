@@ -30,6 +30,8 @@ Date 7.x-2.x-dev, xxxx-xx-xx
 #2123039 by Gold, hgoto, DamienMcKenna: Add Entity API as a new test dependency.
 #2123039 by Gold, hgoto, DamienMcKenna, RoSk0, Juterpillar, joachim: Default
   timezone setting mismatch in metadata wrapper integration.
+#2323857 by anpolimus, DamienMcKenna, claudiu.cristea, catch, joelpittet:
+  date_field_schema() has no index on date.
 
 
 Date 7.x-2.10, 2017-04-07
