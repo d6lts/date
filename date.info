@@ -19,3 +19,4 @@ files[] = tests/date_timezone.test
 files[] = tests/date_views_pager.test
 files[] = tests/date_views_popup.test
 files[] = tests/date_form.test
+files[] = tests/date_entity_metadata_wrappers.test
