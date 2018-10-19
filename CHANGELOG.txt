@@ -34,6 +34,10 @@ Date 7.x-2.x-dev, xxxx-xx-xx
   date_field_schema() has no index on date.
 #2016787 by r-mo, DamienMcKenna, joep.hendrix, heddn, julien_g: Change date
   fields to "big" int values to avoid "PDOException 22003" errors.
+#1137062 by El Alemaño, Nelson Lago, bjcooper, ron_s, ronnienorwood, lunazoid,
+  Michael_Lessard_micles.biz, DamienMcKenna, vinmassaro: Follow-up to fix
+  regression on week calculations.
+  
 
 
 Date 7.x-2.10, 2017-04-07
