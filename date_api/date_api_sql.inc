@@ -218,7 +218,7 @@ class date_sql_handler {
       case 'pgsql':
         switch ($this->date_type) {
           case DATE_UNIX:
-            $field = "$field::ABSTIME";
+            $field = "TO_TIMESTAMP($field)";
             break;
 
           case DATE_ISO:

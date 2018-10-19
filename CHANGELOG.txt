@@ -43,6 +43,8 @@ Date 7.x-2.x-dev, xxxx-xx-xx
   date_migrate_example.info for better git_deploy integration.
 #2880395 by DamienMcKenna, jojonaloha, GoZ: Fatal error: DateTimeZone could not
   be converted to string.
+#2100851 by Juterpillar, Drupa1ish, RoSk0, pingwin4eg, acbramley: Date views
+  exposed filter causes SQL error on PostgreSQL.
 
 
 Date 7.x-2.10, 2017-04-07
