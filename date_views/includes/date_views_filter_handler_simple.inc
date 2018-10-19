@@ -279,6 +279,10 @@ class date_views_filter_handler_simple extends views_handler_filter_date {
     $form['value'] = array();
     $form['value']['#tree'] = TRUE;
     $form['value']['#id'] = 'date_views_exposed_filter-' . bin2hex(drupal_random_bytes(16));
+    $form['value']['#type'] = 'container';
+    if (module_exists('ctools')) {
+      $form['value']['#pre_render'] = array('ctools_dependent_pre_render');
+    }
 
     // Below section copied from views_handler_filter_numeric.inc.
     $which = 'all';

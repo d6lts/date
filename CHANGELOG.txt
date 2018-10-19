@@ -37,7 +37,8 @@ Date 7.x-2.x-dev, xxxx-xx-xx
 #1137062 by El Alemaño, Nelson Lago, bjcooper, ron_s, ronnienorwood, lunazoid,
   Michael_Lessard_micles.biz, DamienMcKenna, vinmassaro: Follow-up to fix
   regression on week calculations.
-  
+#1177198 by tim.plunkett, DamienMcKenna, MustangGB, arlinsandbulte, KarenS:
+  Allow CTools to process #dependency for date elements.
 
 
 Date 7.x-2.10, 2017-04-07
