@@ -113,9 +113,17 @@ class date_sql_handler {
           break;
 
         case 'pgsql':
-          $test = db_query("SELECT '2008-02-15 12:00:00 UTC' AT TIME ZONE 'US/Central'")->fetchField();
-          if ($test == '2008-02-15 06:00:00') {
-            $has_support = TRUE;
+          // PostgreSQL doesn't always have timezone support enabled, so catch
+          // exceptions so they don't break the site. This is safe to do as it
+          // is only checking to see if timezones are actually supported.
+          try {
+            $test = db_query("SELECT '2008-02-15 12:00:00 UTC' AT TIME ZONE 'US/Central'")->fetchField();
+            if ($test == '2008-02-15 06:00:00') {
+              $has_support = TRUE;
+            }
+          }
+          catch (PDOException $e) {
+            // No support.
           }
           break;
       }

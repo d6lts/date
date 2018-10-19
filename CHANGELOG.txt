@@ -45,6 +45,8 @@ Date 7.x-2.x-dev, xxxx-xx-xx
   be converted to string.
 #2100851 by Juterpillar, Drupa1ish, RoSk0, pingwin4eg, acbramley: Date views
   exposed filter causes SQL error on PostgreSQL.
+#2453445 by DamienMcKenna, dan3h, rahul.nahar001: PDOException not handled when
+  using PostgreSQL without timezone support.
 
 
 Date 7.x-2.10, 2017-04-07
