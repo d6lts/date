@@ -11,6 +11,7 @@ test_dependencies[] = entity:entity
 
 ; Test coverage.
 files[] = tests/date_api.test
+files[] = tests/date_now.test
 files[] = tests/date.test
 files[] = tests/date_field.test
 files[] = tests/date_migrate.test

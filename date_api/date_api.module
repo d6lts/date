@@ -1845,9 +1845,11 @@ function date_format_interval($date, $granularity = 2, $display_ago = TRUE) {
  *   The current time as a date object.
  */
 function date_now($timezone = NULL, $reset = FALSE) {
-  $static_var = __FUNCTION__ . $timezone;
   if ($timezone instanceof DateTimeZone) {
     $static_var = __FUNCTION__ . $timezone->getName();
+  }
+  else {
+    $static_var = __FUNCTION__ . $timezone;
   }
 
   if ($reset) {
