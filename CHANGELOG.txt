@@ -39,6 +39,8 @@ Date 7.x-2.x-dev, xxxx-xx-xx
   regression on week calculations.
 #1177198 by tim.plunkett, DamienMcKenna, MustangGB, arlinsandbulte, KarenS:
   Allow CTools to process #dependency for date elements.
+#1778220 by hswong3i, kpyan8s, jacob.embree: Remove version from
+  date_migrate_example.info for better git_deploy integration.
 
 
 Date 7.x-2.10, 2017-04-07

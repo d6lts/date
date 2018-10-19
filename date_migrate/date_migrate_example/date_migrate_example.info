@@ -18,4 +18,3 @@ files[] = date_migrate_example.migrate.inc
 name = "Date Migration Example"
 package = "Features"
 project = "date_migrate_example"
-version = "7.x-2.0"
