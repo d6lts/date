@@ -32,6 +32,8 @@ Date 7.x-2.x-dev, xxxx-xx-xx
   timezone setting mismatch in metadata wrapper integration.
 #2323857 by anpolimus, DamienMcKenna, claudiu.cristea, catch, joelpittet:
   date_field_schema() has no index on date.
+#2016787 by r-mo, DamienMcKenna, joep.hendrix, heddn, julien_g: Change date
+  fields to "big" int values to avoid "PDOException 22003" errors.
 
 
 Date 7.x-2.10, 2017-04-07
