@@ -49,6 +49,7 @@ Date 7.x-2.x-dev, xxxx-xx-xx
   using PostgreSQL without timezone support.
 #2204713 by BR0kEN, jstoller, ebeyrent, gaurav.goyal: Undefined index
   #default_value in date_select_element_process.
+#2291271 by emek, LoonyLuna, periksson: Datepicker needs dynamic width.
 
 
 Date 7.x-2.10, 2017-04-07
