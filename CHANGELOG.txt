@@ -50,6 +50,9 @@ Date 7.x-2.x-dev, xxxx-xx-xx
 #2204713 by BR0kEN, jstoller, ebeyrent, gaurav.goyal: Undefined index
   #default_value in date_select_element_process.
 #2291271 by emek, LoonyLuna, periksson: Datepicker needs dynamic width.
+#2851020 by jacob.embree, nileshlohar, AshwiniPatil, rahul.nahar001,
+  Pranjal.addweb, DamienMcKenna, darshanchoudhary: Use of uppercase for PHP
+  constants.
 
 
 Date 7.x-2.10, 2017-04-07

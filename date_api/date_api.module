@@ -385,7 +385,7 @@ class DateObject extends DateTime {
    * @param bool $force
    *   Whether or not to limit the granularity. Defaults to FALSE.
    *
-   * @return string|false
+   * @return string|bool
    *   Returns the formatted date string on success or FALSE on failure.
    */
   public function format($format, $force = FALSE) {

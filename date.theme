@@ -29,8 +29,8 @@
  *    example: 'date.217.field_date.3.test'
  *
  *  $entity->date_repeat_show
- *    If true, tells the theme to show all the computed values of a repeating
- *    date. If not true or not set, only the start date and the repeat rule
+ *    If TRUE, tells the theme to show all the computed values of a repeating
+ *    date. If not TRUE or not set, only the start date and the repeat rule
  *    will be displayed.
  *
  *  $dates['format']
@@ -251,7 +251,7 @@ function template_preprocess_date_display_single(&$variables) {
     $variables['attributes'] = $variables['attributes'] + $base_attributes;
   }
 
-  // Pass along microdata attributes, or set display to false if none are set.
+  // Pass along microdata attributes, or set display to FALSE if none are set.
   if (!empty($variables['add_microdata'])) {
     // Because the Entity API integration for Date has a variable data
     // structure depending on whether there is an end value, the attributes
@@ -315,7 +315,7 @@ function template_preprocess_date_display_range(&$variables) {
     }
   }
 
-  // Pass along microdata attributes, or set display to false if none are set.
+  // Pass along microdata attributes, or set display to FALSE if none are set.
   if ($variables['add_microdata']) {
     if (!empty($variables['microdata']['value']['#attributes'])) {
       $variables['microdata']['value']['#attributes']['content'] = $variables['dates']['value']['formatted_iso'];
