@@ -493,7 +493,7 @@ function date_select_element_process($element, &$form_state, $form) {
   $date = NULL;
   $granularity = date_format_order($element['#date_format']);
 
-  if (is_array($element['#default_value'])) {
+  if (array_key_exists('#default_value', $element) && is_array($element['#default_value'])) {
     $date = date_select_input_date($element, $element['#default_value']);
   }
   elseif (!empty($element['#default_value'])) {

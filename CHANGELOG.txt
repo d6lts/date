@@ -47,6 +47,8 @@ Date 7.x-2.x-dev, xxxx-xx-xx
   exposed filter causes SQL error on PostgreSQL.
 #2453445 by DamienMcKenna, dan3h, rahul.nahar001: PDOException not handled when
   using PostgreSQL without timezone support.
+#2204713 by BR0kEN, jstoller, ebeyrent, gaurav.goyal: Undefined index
+  #default_value in date_select_element_process.
 
 
 Date 7.x-2.10, 2017-04-07
