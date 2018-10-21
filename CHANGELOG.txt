@@ -53,6 +53,8 @@ Date 7.x-2.x-dev, xxxx-xx-xx
 #2851020 by jacob.embree, nileshlohar, AshwiniPatil, rahul.nahar001,
   Pranjal.addweb, DamienMcKenna, darshanchoudhary: Use of uppercase for PHP
   constants.
+#2832257 by danuddara, alexbarrett: Typo error - "The upcoming date less then 1
+  day" - date.theme.
 
 
 Date 7.x-2.10, 2017-04-07

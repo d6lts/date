@@ -477,9 +477,9 @@ function theme_date_form_element($variables) {
 function theme_date_display_remaining($variables) {
   $remaining_days = $variables['remaining_days'];
   $output = '';
-  $show_remaining_text = t('The upcoming date less then 1 day.');
+  $show_remaining_text = t('Less than 1 day remaining');
   if ($remaining_days) {
-    $show_remaining_text = format_plural($remaining_days, 'To event remaining 1 day', 'To event remaining @count days');
+    $show_remaining_text = format_plural($remaining_days, '1 day remaining', '@count days remaining');
   }
 
   return '<div class="date-display-remaining"><span class="date-display-remaining">' . $show_remaining_text . '</span></div>';
