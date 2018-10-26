@@ -57,6 +57,7 @@ Date 7.x-2.x-dev, xxxx-xx-xx
   day" - date.theme.
 #2844948 by jiv_e: Notice: Undefined index: tz in date_ical_date().
 #1882432 by DamienMcKenna, lolandese: Improve the module'\''s README.txt files.
+#346752 by rreiss, DamienMcKenna: RTL support.
 
 
 Date 7.x-2.10, 2017-04-07
