@@ -59,7 +59,7 @@ function _date_field_update($op, &$node, $field, &$items, $teaser, $page) {
       }
     }
   }
-  $node->$field['field_name'] = $items;
+  $node->{$field['field_name']} = $items;
 }
 
 /**

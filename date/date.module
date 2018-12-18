@@ -493,7 +493,7 @@ function date_field($op, &$node, $field, &$items, $teaser, $page) {
       require_once('./'. drupal_get_path('module', 'date') .'/date_elements.inc');
       $items = $additions[$field['field_name']];
       if ($additions[$field['field_name']]) {
-        $node->$field['field_name'] = $additions;
+        $node->{$field['field_name']} = $additions;
       }
       return _date_field_update($op, $node, $field, $items, $teaser, $page);
       break;
