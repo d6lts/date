@@ -6,3 +6,9 @@ dependencies[] = date_timezone
 dependencies[] = jquery_ui
 package = Date/Time
 core = 6.x
+
+; Information added by Drupal 6 LTS vendors on 2018-12-22
+version = "6.x-2.11"
+core = "6.x"
+project = "date"
+datestamp = "1545506687"
