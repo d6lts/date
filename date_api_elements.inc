@@ -106,6 +106,11 @@ function date_timezone_process($element, $edit, $form_state, $form) {
   }
   // TODO This sometimes causes problems, do we need it?
   //$element['#attributes'] = array('class' => 'date-timezone clear-block');
+
+  // See date_text_process().
+  if (isset($element['#value']) && is_string($element['#value'])) {
+    $element['#value'] = array();
+  }
   return $element;
 }
 
@@ -160,6 +165,16 @@ function date_text_process($element, $edit, $form_state, $form) {
   }
   if (!empty($element['#force_value'])) {
     $element['date']['#value'] = $element['date']['#default_value'];
+  }
+
+  // $element['#value'] was moved into the 'date' element. Our caller will
+  // call form_set_value() with it, which we don't need anymore and which will
+  // cause an error later if form_set_value() is called with
+  // $element['date']['#value'] - which can be circumvented by feeding an empty
+  // array into form_set_value() now. (Luckily this is only needed when the
+  // form is not submitted yet; otherwise validation would fail.)
+  if (isset($element['#value']) && is_string($element['#value'])) {
+    $element['#value'] = array();
   }
   return $element;
 }
@@ -216,6 +231,10 @@ function date_select_process($element, $edit, $form_state, $form) {
     $element['#element_validate'] = array('date_select_validate');
   }
 
+  // See date_text_process().
+  if (isset($element['#value']) && is_string($element['#value'])) {
+    $element['#value'] = array();
+  }
   return $element;
 }
 
