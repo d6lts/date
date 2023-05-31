@@ -243,9 +243,9 @@ function template_preprocess_date_vcalendar(&$vars) {
  */
 function template_preprocess_date_views_filter_form(&$vars) {
   $form = $vars['form'];
-  $vars['date'] = drupal_render($form['valuedate']);
-  $vars['mindate'] = drupal_render($form['mindate']);
-  $vars['maxdate'] = drupal_render($form['maxdate']);
+  $vars['date'] = drupal_render($form['value']);
+  $vars['mindate'] = drupal_render($form['min']);
+  $vars['maxdate'] = drupal_render($form['max']);
   $vars['adjustment'] = drupal_render($form['valueadjustment']);
   $vars['minadjustment'] = drupal_render($form['minadjustment']);
   $vars['maxadjustment'] = drupal_render($form['maxadjustment']);
